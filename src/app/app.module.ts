@@ -8,16 +8,23 @@ import { AppComponent } from './app.component';
 import { AuthorizationModule } from './authorization/authorization.module';
 import { LoginComponent } from './authorization/components/login/login.component';
 import { HomeModule } from './home/home.module';
+import { DefaultLayoutComponent } from './components/default-layout/default-layout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DefaultLayoutComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
+  // exports: [HeaderComponent],
   providers: [HttpClient],
   bootstrap: [AppComponent]
 })
