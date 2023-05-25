@@ -29,6 +29,7 @@ export class LoginComponent {
     this.loginService.login(email, password).subscribe((res) => {
       if (res.token) {
         console.log('response: ', res);
+        window.localStorage.setItem('token', res.token);
 
         window.location.href = '/home';
       }

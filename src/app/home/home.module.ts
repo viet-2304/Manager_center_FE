@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HeaderComponent } from '../components/header/header.component';
 import { HomeRouting } from './home.routing';
 
 import { HomePageComponent } from './pages/home-page/home-page.component';

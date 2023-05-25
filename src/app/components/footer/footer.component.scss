@@ -1,0 +1,50 @@
+.footer {
+  display: flex;
+  color: whitesmoke;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(247deg 35.01% 21.19%);
+
+  .menu-text {
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+  }
+
+  .icon-social-media {
+    list-style: none;
+  }
+
+  .icon {
+    color: aliceblue;
+    font-size: 35px;
+  }
+
+  .footer-section {
+    display: flex;
+    justify-content: flex-start;
+    height: 60%;
+    .item-contact {
+      padding-bottom: 20px;
+    }
+  }
+  .contact-info {
+    list-style-type: none;
+    li {
+      margin-bottom: 10px;
+      a {
+        text-decoration: none;
+        color: aliceblue;
+        i {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
