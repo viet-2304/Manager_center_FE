@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { DefaultLayoutComponent } from './components/default-layout/default-layout.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DefaultLayoutComponent,
-    // HeaderComponent,
-    // FooterComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

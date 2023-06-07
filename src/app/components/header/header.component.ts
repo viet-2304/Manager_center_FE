@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  public login(): void {
-    window.location.replace("/auth/login")
+  // public login(): void {
+  //   window.location.replace("/auth/login")
+  // }
+
+  public redirect(url: string): void{
+    window.location.replace(url)
   }
 }

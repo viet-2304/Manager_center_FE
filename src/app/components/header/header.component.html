@@ -1,62 +1,47 @@
-<div class="header">
-  <div class="col-3">
-    <a href="" class="ps-5 text-decoration-none fs-2"> EduAcademy </a>
-  </div>
+<header class="header" data-header>
+  <div class="container">
+    <h1>
+      <a href="#" class="logo">EduHome</a>
+    </h1>
 
-  <div class="col-5">
-    <nav class="navbar navbar-expand-lg navbar-menu ps-5 fs-5">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item pe-4">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown pe-4">
-              <a
-                class="nav-link"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                About
-              </a>
-            </li>
-            <li class="nav-item dropdown pe-4">
-              <a
-                class="nav-link"
-                href="/course"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Course
-              </a>
-            </li>
-            <li class="nav-item dropdown pe-4">
-              <a
-                class="nav-link"
-                href="/teacher"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Teacher
-              </a>
-            </li>
-            <li class="nav-item dropdown pe-4">
-              <a class="nav-link" aria-current="page" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
+    <nav class="navbar" data-navbar>
+      <div class="navbar-top">
+        <a href="#" class="logo">EduHome</a>
+
+        <button
+          class="nav-close-btn"
+          aria-label="Close menu"
+          data-nav-toggler
+        ></button>
       </div>
-    </nav>
-  </div>
 
-  <div class="d-flex col-3 justify-content-center">
-    <button type="button" class="w-75 p-2 btn btn-primary" (click)="login()">
-      <i class="fa-solid fa-user me-2"  ></i>
-      Login/Register
-    </button>
+      <ul class="navbar-list">
+        <li class="navbar-item">
+          <a href="#home" class="navbar-link" data-nav-toggler>Home</a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#about" class="navbar-link" data-nav-toggler>About</a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="course" class="navbar-link" data-nav-toggler>Courses</a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="teacher" class="navbar-link" data-nav-toggler>Teacher</a>
+        </li>
+
+        <li class="navbar-item">
+          <a href="#" class="navbar-link" data-nav-toggler>Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a (click)="redirect('/auth/login')" class="header-action-btn login-btn">
+        <span class="span">Login / Register</span>
+      </a>
+    </div>
   </div>
-</div>
+</header>

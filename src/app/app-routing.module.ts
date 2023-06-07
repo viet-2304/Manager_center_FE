@@ -18,6 +18,11 @@ const appRouter = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'teacher',
+    loadChildren: () =>
+      import('./modules/teachers/teacher.module').then((m) => m.TeacherModule),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRouter, {})],

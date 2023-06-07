@@ -9,11 +9,12 @@ import { CommonModule } from '@angular/common';
 import { TeacherSessionComponent } from './components/teacher-session/teacher-session.component';
 import { CourseSessionComponent } from './components/course-session/course-session.component';
 import { CourseItemComponent } from './components/course-item/course-item.component';
+import { CategorySessionComponent } from './components/category-session/category-session.component';
 
 @NgModule({
   imports: [HomeRouting,CommonModule],
   exports: [],
-  declarations: [HomePageComponent, HeaderComponent, FooterComponent, TeacherItemComponent, TeacherSessionComponent, CourseSessionComponent, CourseItemComponent],
+  declarations: [HomePageComponent,  TeacherItemComponent, TeacherSessionComponent, CourseSessionComponent, CourseItemComponent, CategorySessionComponent],
   providers: [],
 })
 export class HomeModule {}
