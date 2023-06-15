@@ -1,7 +1,7 @@
-<header class="header" data-header>
+<header class="header" data-header *ngIf="isShow">
   <div class="container">
     <h1>
-      <a href="#" class="logo">EduHome</a>
+      <a href="#" class="logo">EduAcademy</a>
     </h1>
 
     <nav class="navbar" data-navbar>
@@ -39,9 +39,32 @@
     </nav>
 
     <div class="header-actions">
-      <a (click)="redirect('/auth/login')" class="header-action-btn login-btn">
+      <a
+        (click)="redirect('/auth/login')"
+        class="header-action-btn login-btn"
+        *ngIf="!isLogin"
+      >
         <span class="span">Login / Register</span>
       </a>
+      <div *ngIf="isLogin">
+        <div class="dropdown">
+          <button
+            class="user-item"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fa-regular fa-user"></i>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>

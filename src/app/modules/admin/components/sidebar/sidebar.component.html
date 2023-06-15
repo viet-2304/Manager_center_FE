@@ -1,0 +1,47 @@
+<div class="row bg-secondary">
+  <div class="col-auto col-md-3 col-xl-4 px-sm-2 px-0">
+    <div
+      class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+    >
+      <a href="/" class="d-flex align-items-center mt-5 text-decoration-none">
+        <span class="d-none d-sm-inline logo">EduAcademy</span>
+      </a>
+      <ul
+        class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+        id="menu"
+      >
+        <li
+          class="nav-item btn btn-outline-light"
+          [ngClass]="menuActive == 'home' ? 'active' : ''"
+          (click)="active('home')"
+        >
+          <i class="fa-solid fa-house"></i>
+          <span class="ms-3 d-none d-sm-inline">Home</span>
+        </li>
+        <li
+          class="nav-item btn btn-outline-light"
+          [ngClass]="menuActive == 'student' ? 'active' : ''"
+          (click)="active('student')"
+        >
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="ms-3 d-none d-sm-inline">Student</span>
+        </li>
+        <li
+          class="nav-item btn btn-outline-light"
+          [ngClass]="menuActive == 'teacher' ? 'active' : ''"
+          (click)="active('teacher')"
+        >
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span class="ms-3 d-none d-sm-inline">Teacher</span>
+        </li>
+        <li
+          class="nav-item btn btn-outline-light"
+          [ngClass]="menuActive == 'room' ? 'active' : ''"
+        >
+          <i class="fa-solid fa-door-open"></i>
+          <span class="ms-3 d-none d-sm-inline">Rooms</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

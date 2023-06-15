@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent {
   public registerForm: any;
 
-  constructor() {}
+  constructor(private loginService: LoginService) {}
   public ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -28,7 +29,8 @@ export class RegisterComponent {
   }
 
   public register(): void {
-    console.log('hahaha: ', this.registerForm.controls);
+    // console.log('hahaha: ', this.registerForm.controls);
+    // this.loginService.doubleIncreateState();
   }
   get name() {
     return this.registerForm.get('email');

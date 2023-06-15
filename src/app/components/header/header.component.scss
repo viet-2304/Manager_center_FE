@@ -1,4 +1,4 @@
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -11,5 +11,14 @@
     font-size: large;
     font-weight: 500;
   }
-}
 
+  .user-item {
+    width: 30px;
+    border: 1px black solid;
+    border-radius: 50%;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+}

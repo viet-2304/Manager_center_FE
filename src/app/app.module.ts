@@ -13,6 +13,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { httpInterceptorProviders } from './core/interceptor';
+import { StoreModule } from '@ngrx/store';
+import { currentStudent } from './home/models/user.model';
+import { studentReducer } from './home/services/student.reducer';
+import { userReducer } from './authorization/service/user.reducer';
 
 @NgModule({
   declarations: [
@@ -27,9 +32,13 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
+    StoreModule.forRoot({
+      currentStudent: studentReducer,
+      currentUser: userReducer
+    }),
   ],
   // exports: [HeaderComponent],
-  providers: [HttpClient],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

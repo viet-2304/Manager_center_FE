@@ -13,4 +13,6 @@ export class UserInfo {
   public phoneNumber: string;
   public address: string;
   public userName: string;
+  public roleId: string;
 }
+

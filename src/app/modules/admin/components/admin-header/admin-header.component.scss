@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 40px;
+  background-color: aliceblue;
+
+  .user-action {
+    margin-right: 100px;
+    .user-dropdown {
+      border: 1px black solid;
+      border-radius: 50%;
+      width: 35px;
+    }
+  }
+}
