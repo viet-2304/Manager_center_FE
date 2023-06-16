@@ -8,7 +8,7 @@ import { ShareDataService } from '../../service/shared-data.service';
 })
 export class SidebarComponent {
   constructor( private sharedDataService: ShareDataService) {}
-  public menuActive='home';
+  public menuActive='student';
 
   public active(path: string): void {
     this.menuActive = path;

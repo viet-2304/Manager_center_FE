@@ -14,10 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { httpInterceptorProviders } from './core/interceptor';
-import { StoreModule } from '@ngrx/store';
-import { currentStudent } from './home/models/user.model';
-import { studentReducer } from './home/services/student.reducer';
-import { userReducer } from './authorization/service/user.reducer';
+import { NgxsModule } from '@ngxs/store';
 
 @NgModule({
   declarations: [
@@ -32,10 +29,8 @@ import { userReducer } from './authorization/service/user.reducer';
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
-    StoreModule.forRoot({
-      currentStudent: studentReducer,
-      currentUser: userReducer
-    }),
+    NgxsModule.forRoot([], { developmentMode: false }),
+
   ],
   // exports: [HeaderComponent],
   providers: [httpInterceptorProviders],

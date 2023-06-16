@@ -1,7 +1,7 @@
 <div class="form-login w-100">
   <h1>WELCOME</h1>
   <br />
-  <form style="width: 500px" [formGroup]="loginForm">
+  <form style="width: 500px" [formGroup]="loginForm" (submit)="login()">
     <!-- Email input -->
     <label class="form-label" for="form2Example1">Email address</label>
     <div class="form-outline mb-4">
@@ -52,8 +52,7 @@
 
     <div class="d-flex justify-content-center flex-column">
       <button
-        (click)="login()"
-        type="button"
+        type="submit"
         class="btn btn-primary btn-block mb-4 p-3"
       >
         Sign in

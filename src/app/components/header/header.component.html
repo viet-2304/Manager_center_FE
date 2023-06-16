@@ -38,33 +38,33 @@
       </ul>
     </nav>
 
-    <div class="header-actions">
-      <a
-        (click)="redirect('/auth/login')"
-        class="header-action-btn login-btn"
-        *ngIf="!isLogin"
-      >
-        <span class="span">Login / Register</span>
-      </a>
-      <div *ngIf="isLogin">
+    <div>
+      <div *ngIf="!isLogin; else userItem">
+        <a
+          (click)="redirect('/auth/login')"
+          class="header-action-btn login-btn"
+        >
+          <span class="span">Login / Register</span>
+        </a>
+      </div>
+      <ng-template #userItem>
         <div class="dropdown">
+          <!-- <div class="user-item"> -->
           <button
-            class="user-item"
             type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             <i class="fa-regular fa-user"></i>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+          <!-- </div> -->
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" (click)="logout()">logout</a></li>
+          </ul>
         </div>
-      </div>
+      </ng-template>
     </div>
   </div>
 </header>

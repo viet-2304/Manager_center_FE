@@ -7,6 +7,8 @@ import { MessagesModule } from 'primeng/messages';
 import { ToastModule } from 'primeng/toast';
 import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
+import { NgxsModule } from '@ngxs/store';
+import { UserState } from './service/user.state';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,10 +17,11 @@ import { CommonModule } from '@angular/common';
     AuthorizationRouting,
     ToastModule,
     MessagesModule,
-    FormsModule
+    FormsModule,
+    NgxsModule.forFeature([UserState]),
   ],
   exports: [LoginComponent],
   declarations: [LoginComponent, RegisterComponent],
   providers: [],
 })
-export class AuthorizationModule { }
+export class AuthorizationModule {}

@@ -1,7 +1,5 @@
-import { createAction, props } from "@ngrx/store";
-import { UserInfo } from "../models/Login.model";
-
-export const setCurrentUser = createAction(
-  '[currentUser Component] SetCurrentUser',
-  props<UserInfo>()
-);
+import {CurrentUser} from './../models/Login.model'
+export class SetCurrentUser {
+  public static readonly type = '[currentUser] Get currentUser';
+  constructor(public currentUser: CurrentUser){}
+}

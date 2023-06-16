@@ -1,12 +1,13 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
+import { Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { MessageService } from 'primeng/api';
-import { UserInfo } from '../../models/Login.model';
+import { CurrentUser } from '../../models/Login.model';
 import { LoginService } from '../../service/login.service';
-import { setCurrentUser } from '../../service/user.action';
+import { SetCurrentUser } from '../../service/user.action';
+import { UserState } from '../../service/user.state';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent {
     private toastService: ToastrService,
     private loginService: LoginService,
     private cdf: ChangeDetectorRef,
-    private store: Store<{currentUser: UserInfo}>
+    private store: Store
   ) {}
 
   public ngOnInit(): void {
@@ -47,9 +48,12 @@ export class LoginComponent {
         window.localStorage.setItem('authToken', res.token);
         window.localStorage.setItem('email', res.userDto.email);
         window.localStorage.setItem('role', res.userDto.roleId);
+        this.store.dispatch(new SetCurrentUser(res.userDto));
+
         if (res.userDto.roleId === 'admin') {
           window.location.href = '/admin';
         } else {
+          console.log(this.store.selectSnapshot(UserState.getCurrentUser));
           window.location.href = '/home';
         }
       },

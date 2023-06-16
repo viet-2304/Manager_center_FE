@@ -1,70 +1,112 @@
 <p-table
-[value]="students"
-[tableStyle]="{ 'min-width': '50rem', 'font-size': '15px' }"
-scrollHeight="800px"
+  [value]="students"
+  [tableStyle]="{
+    'min-width': '80rem',
+    'font-size': '15px',
+    border: '1px soild black'
+  }"
+  scrollHeight="800px"
 >
-<ng-template pTemplate="header">
-  <tr>
-    <th>Họ Và Tên</th>
-    <th>Giới tính</th>
-    <th>Email</th>
-    <th>Số điện thoại</th>
-    <th>Địa chỉ</th>
-    <th>Họ và tên mẹ</th>
-    <th>Số điện thoại mẹ </th>
-    <th>Họ và tên cha</th>
-    <th>Số điện thoại cha</th>
-    <th>Ngày sinh</th>
-  </tr>
-  <tr>
-    <th pSortableColumn="fullName">
-      <p-sortIcon field="fullName"></p-sortIcon>
-    </th>
-    <th pSortableColumn="gender">
-      <p-sortIcon field="gender"></p-sortIcon>
-    </th>
+  <ng-template pTemplate="header">
+    <tr>
+      <th></th>
 
-    <th pSortableColumn="email">
-      <p-sortIcon field="email"></p-sortIcon>
-    </th>
+      <th>Họ Và Tên</th>
+      <th>Giới tính</th>
+      <th>Email</th>
+      <th>Số điện thoại</th>
+      <th>Địa chỉ</th>
+      <th>Họ và tên mẹ</th>
+      <th>Số điện thoại mẹ</th>
+      <th>Họ và tên cha</th>
+      <th>Số điện thoại cha</th>
+      <th>Ngày sinh</th>
+      <th>Trạng thái</th>
+    </tr>
+    <tr>
+      <th></th>
 
-    <th pSortableColumn="phoneNumber">
-      <p-sortIcon field="phoneNumber"></p-sortIcon>
-    </th>
-    <th pSortableColumn="address">
-      <p-sortIcon field="address"></p-sortIcon>
-    </th>
+      <th pSortableColumn="fullName">
+        <p-sortIcon field="fullName"></p-sortIcon>
+      </th>
+      <th pSortableColumn="gender">
+        <p-sortIcon field="gender"></p-sortIcon>
+      </th>
 
-    <th pSortableColumn="motherName">
-      <p-sortIcon field="motherName"></p-sortIcon>
-    </th>
+      <th pSortableColumn="email">
+        <p-sortIcon field="email"></p-sortIcon>
+      </th>
 
-    <th pSortableColumn="motherPhoneNumber">
-      <p-sortIcon field="motherPhoneNumber"></p-sortIcon>
-    </th>
-    <th pSortableColumn="fatherName">
-      <p-sortIcon field="fatherName"></p-sortIcon>
-    </th>
-    <th pSortableColumn="fatherPhoneNumber">
-      <p-sortIcon field="fatherPhoneNumber"></p-sortIcon>
-    </th>
-    <th pSortableColumn="dateOfBirth">
-      <p-sortIcon field="dateOfBirth"></p-sortIcon>
-    </th>
-  </tr>
-</ng-template>
-<ng-template pTemplate="body" let-student>
-  <tr>
-    <td>{{ student.fullName }}</td>
-    <td>{{ student.gender }}</td>
-    <td>{{ student.email }}</td>
-    <td>{{ student.phoneNumber }}</td>
-    <td>{{ student.address }}</td>
-    <td>{{ student.motherName }}</td>
-    <td>{{ student.motherPhoneNumber }}</td>
-    <td>{{ student.fatherName }}</td>
-    <td>{{ student.fatherPhoneNumber }}</td>
-    <td>{{ student.dateOfBirth | date }}</td>
-  </tr>
-</ng-template>
+      <th pSortableColumn="phoneNumber">
+        <p-sortIcon field="phoneNumber"></p-sortIcon>
+      </th>
+      <th pSortableColumn="address">
+        <p-sortIcon field="address"></p-sortIcon>
+      </th>
+
+      <th pSortableColumn="motherName">
+        <p-sortIcon field="motherName"></p-sortIcon>
+      </th>
+
+      <th pSortableColumn="motherPhoneNumber">
+        <p-sortIcon field="motherPhoneNumber"></p-sortIcon>
+      </th>
+      <th pSortableColumn="fatherName">
+        <p-sortIcon field="fatherName"></p-sortIcon>
+      </th>
+      <th pSortableColumn="fatherPhoneNumber">
+        <p-sortIcon field="fatherPhoneNumber"></p-sortIcon>
+      </th>
+      <th pSortableColumn="dateOfBirth">
+        <p-sortIcon field="dateOfBirth"></p-sortIcon>
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-student>
+    <tr>
+      <td>
+        <button
+          class="btn btn-lg btn-danger"
+          (click)="changeActive(!student.active, student.email)"
+        >
+          Xóa học sinh
+        </button>
+      </td>
+      <td>{{ student.fullName }}</td>
+      <td>{{ student.gender | genTransfer }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.phoneNumber }}</td>
+      <td>{{ student.address }}</td>
+      <td>{{ student.motherName }}</td>
+      <td>{{ student.motherPhoneNumber }}</td>
+      <td>{{ student.fatherName }}</td>
+      <td>{{ student.fatherPhoneNumber }}</td>
+      <td>{{ student.dateOfBirth | date }}</td>
+      <td>{{student.active| stateTransfer}}</td>
+    </tr>
+
+    <p-dialog
+      header="Xóa"
+      [(visible)]="visible"
+      [breakpoints]="{ '960px': '75vw' }"
+      [style]="{ width: '50vw' }"
+      [draggable]="false"
+      [resizable]="false"
+    >
+      <p>Bạn có chắc chắn muốn xóa học sinh</p>
+      <ng-template pTemplate="footer">
+        <p-button
+          (click)="visible = false"
+          label="Cancel"
+          class="btn-danger"
+        ></p-button>
+        <p-button
+          (click)="removeStudent()"
+          label="Ok"
+          class="btn-success"
+        ></p-button>
+      </ng-template>
+    </p-dialog>
+  </ng-template>
 </p-table>

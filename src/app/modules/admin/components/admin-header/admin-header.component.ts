@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogoutService } from 'src/app/authorization/service/logout.service';
 
 @Component({
   selector: 'app-admin-header',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AdminHeaderComponent {
 
+  constructor(private logoutService: LogoutService){}
+  public logout(): void {
+    this.logoutService.logout()
+  }
 }

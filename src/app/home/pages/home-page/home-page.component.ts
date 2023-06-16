@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store } from '@ngxs/store';
 import { currentStudent } from '../../models/user.model';
-import { studentReducer } from '../../services/student.reducer';
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +9,7 @@ import { studentReducer } from '../../services/student.reducer';
 })
 export class HomePageComponent {
 
-  constructor(private store: Store<{currentUser: currentStudent}>) {}
+  constructor(private store: Store) {}
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.

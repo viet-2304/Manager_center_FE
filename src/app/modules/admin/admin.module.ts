@@ -10,6 +10,10 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
 import { MainComponent } from './components/main/main.component';
 import { TableModule } from 'primeng/table';
 import { StudentManagerTableComponent } from './components/student-manager-table/student-manager-table.component';
+import { ManagerRoomComponent } from './components/manager-room/manager-room.component';
+import { DialogModule } from 'primeng/dialog';
+import { StatePipe } from './pipes';
+import { GenPipe } from './pipes/gen.pipe';
 @NgModule({
   declarations: [
     AdminPageComponent,
@@ -17,6 +21,9 @@ import { StudentManagerTableComponent } from './components/student-manager-table
     AdminHeaderComponent,
     MainComponent,
     StudentManagerTableComponent,
+    ManagerRoomComponent,
+    StatePipe,
+    GenPipe
   ],
   imports: [
     CommonModule,
@@ -24,6 +31,7 @@ import { StudentManagerTableComponent } from './components/student-manager-table
     SidebarModule,
     ButtonModule,
     TableModule,
+    DialogModule
   ],
 })
 export class AdminModule {}

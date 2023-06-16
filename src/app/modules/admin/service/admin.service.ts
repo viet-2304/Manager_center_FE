@@ -14,4 +14,10 @@ export class AdminService {
       `${this.apiHost}/student/getAllStudent`
     );
   }
+
+  public updateUserState(email:string, status: boolean): Observable<any> {
+    return this.httpClient.get(
+      `${this.apiHost}/user/updateStatus?email=${email}&status=${status}`
+    )
+  }
 }

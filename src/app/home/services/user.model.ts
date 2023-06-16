@@ -9,4 +9,5 @@ export class StudentModel {
   public gender: string;
   public dateOfBirth: string;
   public fullName: string;
+  public active: boolean;
 }

@@ -5,10 +5,10 @@ export class LoginBodyModel {
 
 export class LoginResponse {
   public token: string;
-  public userDto: UserInfo;
+  public userDto: CurrentUser;
 }
 
-export class UserInfo {
+export class CurrentUser {
   public email: string;
   public phoneNumber: string;
   public address: string;
