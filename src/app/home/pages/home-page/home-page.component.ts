@@ -16,6 +16,10 @@ export class HomePageComponent {
     this.store.select('currentUser').subscribe(res => console.log("res" , res));
 
   }
+
+  public register() : void {
+    window.location.replace("/auth/register")
+  }
   public subjects = [
     { name: 'Maths', courseNumber: 10 },
     { name: 'Literature', courseNumber: 10 },

@@ -18,7 +18,45 @@
             <div class="col-xl-6">
               <div class="card-body p-md-5 text-black">
                 <h3 class="mb-5 text-uppercase">Student registration form</h3>
-                <form action="" [formGroup]="registerForm">
+                <form
+                  action=""
+                  [formGroup]="registerForm"
+                  (submit)="register()"
+                >
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example97">Email</label>
+                    <input
+                      type="text"
+                      id="form3Example97"
+                      class="form-control form-control-lg"
+                      formControlName="email"
+                    />
+                    <div
+                      *ngIf="email.invalid && (email.dirty || email.touched)"
+                      class="text-danger"
+                    >
+                      <div *ngIf="email.errors?.['required']">
+                        email is required.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example97">Password</label>
+                    <input
+                      type="text"
+                      id="form3Example97"
+                      class="form-control form-control-lg"
+                      formControlName="password"
+                    />
+                    <div
+                      *ngIf="password.invalid && (password.dirty || password.touched)"
+                      class="text-danger"
+                    >
+                      <div *ngIf="password.errors?.['required']">
+                        password is required.
+                      </div>
+                    </div>
+                  </div>
                   <div class="row">
                     <div class="col-md-12 mb-4">
                       <div class="form-outline">
@@ -55,17 +93,6 @@
                           class="form-control form-control-lg"
                           formControlName="motherName"
                         />
-                        <div
-                          *ngIf="
-                            motherName.invalid &&
-                            (motherName.dirty || motherName.touched)
-                          "
-                          class="text-danger"
-                        >
-                          <div *ngIf="motherName.errors?.['required']">
-                            motherName is required.
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -79,17 +106,21 @@
                           class="form-control form-control-lg"
                           formControlName="fatherName"
                         />
-                        <div
-                          *ngIf="
-                            fatherName.invalid &&
-                            (fatherName.dirty || fatherName.touched)
-                          "
-                          class="text-danger"
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="form3Example1m1"
+                          >Số điện thoại phụ huynh</label
                         >
-                          <div *ngIf="fatherName.errors?.['required']">
-                            fatherName is required.
-                          </div>
-                        </div>
+                        <input
+                          type="text"
+                          id="form3Example1m1"
+                          class="form-control form-control-lg"
+                          formControlName="phoneContact"
+                        />
                       </div>
                     </div>
                   </div>
@@ -170,24 +201,6 @@
                       <label class="form-check-label" for="maleGender"
                         >Male</label
                       >
-                    </div>
-                  </div>
-
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example97">Email</label>
-                    <input
-                      type="text"
-                      id="form3Example97"
-                      class="form-control form-control-lg"
-                      formControlName="email"
-                    />
-                    <div
-                      *ngIf="email.invalid && (email.dirty || email.touched)"
-                      class="text-danger"
-                    >
-                      <div *ngIf="email.errors?.['required']">
-                        email is required.
-                      </div>
                     </div>
                   </div>
                 </form>

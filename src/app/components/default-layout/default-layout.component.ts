@@ -11,21 +11,17 @@ export class DefaultLayoutComponent implements OnInit {
   public ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    console.log('init');
-
     this.authorization();
   }
 
   public authorization(): void {
-    console.log('here');
+    window.location.href = '/home';
 
-    this.tokenAuth = window.localStorage.getItem('token');
-    if (this.tokenAuth) {
-      console.log('token: ', this.tokenAuth);
-
-      window.location.href = '/home';
-    } else {
-      window.location.href = '/auth/login';
-    }
+    // this.tokenAuth = window.localStorage.getItem('token');
+    // if (this.tokenAuth) {
+    //   window.location.href = '/home';
+    // } else {
+    //   window.location.href = '/auth/login';
+    // }
   }
 }
