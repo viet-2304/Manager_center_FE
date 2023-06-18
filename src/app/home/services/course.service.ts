@@ -1,20 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { StudentRegisterModel } from '../models/Register.model';
 import { Observable } from 'rxjs';
+import { CourseResponse } from '../models/course.model';
 
 @Injectable({ providedIn: 'root' })
-export class RegisterService {
+export class CourseService {
   constructor(private httpClient: HttpClient) {}
+
   private apiHost = `${environment.localAPi}`;
 
-  public register(
-    student: StudentRegisterModel
-  ): void {
-     this.httpClient.post(
-      `${this.apiHost}/auth/student-register`,
-      student
+  public getAllCourse(): Observable<CourseResponse[]> {
+    return this.httpClient.get<CourseResponse[]>(
+      `${this.apiHost}/courses/getAllCourses`
     );
   }
 }

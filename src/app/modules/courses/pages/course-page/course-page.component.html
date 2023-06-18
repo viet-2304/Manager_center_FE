@@ -1,1 +1,20 @@
-<p>course-page works!</p>
+<div class="ms-5" style="margin-top: 7%">
+  <h1 class="text-center mb-5 section-title">DANH SÁCH LỚP HỌC</h1>
+  <div class="d-flex justify-content-center flex-column category">
+    <ul class="grid-list p-0 m-0 ms-5">
+      <!-- <div class="d-flex col-12"> -->
+      <div *ngFor="let course of courses" class="col-9 border">
+        <li>
+          <app-course-items [course]="course"></app-course-items>
+        </li>
+      </div>
+      <!-- </div> -->
+    </ul>
+    <p-paginator
+      [rows]="3"
+      [totalRecords]="7"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      [showFirstLastIcon]="false"
+    ></p-paginator>
+  </div>
+</div>

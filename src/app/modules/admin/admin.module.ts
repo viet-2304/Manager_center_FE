@@ -14,6 +14,7 @@ import { ManagerRoomComponent } from './components/manager-room/manager-room.com
 import { DialogModule } from 'primeng/dialog';
 import { StatePipe } from './pipes';
 import { GenPipe } from './pipes/gen.pipe';
+import { TeacherManagerTableComponent } from './components/teacher-manager-table/teacher-manager-table.component';
 @NgModule({
   declarations: [
     AdminPageComponent,
@@ -23,7 +24,8 @@ import { GenPipe } from './pipes/gen.pipe';
     StudentManagerTableComponent,
     ManagerRoomComponent,
     StatePipe,
-    GenPipe
+    GenPipe,
+    TeacherManagerTableComponent
   ],
   imports: [
     CommonModule,

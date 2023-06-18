@@ -1,5 +1,5 @@
 <div class="navbar">
-  <div class="btn-group  user-action">
+  <div class="btn-group user-action">
     <button
       type="button "
       class="user-dropdown"
@@ -8,7 +8,9 @@
       aria-expanded="false"
     >
       <i class="fa-solid fa-user"></i>
+
     </button>
+    {{ currentAdmin?.email }}
     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
       <li>
         <button class="dropdown-item" type="button" (click)="logout()">

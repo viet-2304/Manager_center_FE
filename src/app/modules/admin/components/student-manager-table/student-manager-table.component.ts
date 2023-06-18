@@ -13,7 +13,7 @@ export class StudentManagerTableComponent {
   public students: StudentModel[];
   public visible: boolean;
   private currentAccountState: boolean;
-  public currentEmail = window.localStorage.getItem('email') ?? '';
+  public currentEmail :string;
   constructor(
     private adminService: AdminService,
     private cdr: ChangeDetectorRef

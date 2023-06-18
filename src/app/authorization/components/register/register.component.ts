@@ -33,14 +33,8 @@ export class RegisterComponent {
   }
 
   public register(): void {
-    this.registerService.register(this.getStudentRegister()).subscribe({
-      next: (res) => {
-        window.location.replace("/home")
-      },
-      error: (err) => {
-        console.log('error: ', err);
-      },
-    });
+    this.registerService.register(this.getStudentRegister());
+    window.location.replace('/home');
   }
 
   private getStudentRegister(): StudentRegisterModel {

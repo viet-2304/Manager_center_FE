@@ -9,6 +9,7 @@ import { ShareDataService } from '../../service/shared-data.service';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
+  public sidebarSelected: string ='student';
   constructor(private sharedDataService: ShareDataService) {}
 
   ngOnInit(): void {
@@ -19,7 +20,7 @@ export class MainComponent {
   private getMessage(): void {
     this.sharedDataService
       .getMessage()
-      .subscribe((res) => console.log('message: ', res));
+      .subscribe((res) => {this.sidebarSelected = res + ""});
   }
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.

@@ -1,5 +1,5 @@
 <p-table
-  [value]="students"
+  [value]="teachers"
   [tableStyle]="{
     'min-width': '80rem',
     'font-size': '15px',
@@ -11,14 +11,11 @@
     <tr>
       <th></th>
       <th>Họ Và Tên</th>
+      <th>Môn giảng dạy</th>
       <th>Giới tính</th>
       <th>Email</th>
       <th>Số điện thoại</th>
       <th>Địa chỉ</th>
-      <th>Họ và tên mẹ</th>
-      <th>Số điện thoại mẹ</th>
-      <th>Họ và tên cha</th>
-      <th>Số điện thoại cha</th>
       <th>Ngày sinh</th>
       <th>Trạng thái</th>
     </tr>
@@ -26,6 +23,9 @@
       <th></th>
       <th pSortableColumn="fullName">
         <p-sortIcon field="fullName"></p-sortIcon>
+      </th>
+      <th pSortableColumn="subject">
+        <p-sortIcon field="subject"></p-sortIcon>
       </th>
       <th pSortableColumn="gender">
         <p-sortIcon field="gender"></p-sortIcon>
@@ -39,53 +39,37 @@
       <th pSortableColumn="address">
         <p-sortIcon field="address"></p-sortIcon>
       </th>
-      <th pSortableColumn="motherName">
-        <p-sortIcon field="motherName"></p-sortIcon>
-      </th>
-      <th pSortableColumn="motherPhoneNumber">
-        <p-sortIcon field="motherPhoneNumber"></p-sortIcon>
-      </th>
-      <th pSortableColumn="fatherName">
-        <p-sortIcon field="fatherName"></p-sortIcon>
-      </th>
-      <th pSortableColumn="fatherPhoneNumber">
-        <p-sortIcon field="fatherPhoneNumber"></p-sortIcon>
-      </th>
       <th pSortableColumn="dateOfBirth">
         <p-sortIcon field="dateOfBirth"></p-sortIcon>
       </th>
       <th></th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-student>
+  <ng-template pTemplate="body" let-teacher>
     <tr>
       <td>
         <button
           class="btn btn-lg"
-          [ngClass]="!student.active ? 'btn-success' : 'btn-danger'"
-          (click)="changeActive(!student.active, student.email)"
+          [ngClass]="!teacher.active ? 'btn-success' : 'btn-danger'"
+          (click)="changeActive(!teacher.active, teacher.email)"
         >
-        {{student.active ? 'Xóa học sinh': 'Khôi phục tài khoản'}}
-
+          {{ teacher.active ? "Xóa giáo viên" : "Khôi phục tài khoản" }}
         </button>
       </td>
-      <td>{{ student.fullName }}</td>
-      <td>{{ student.gender | genTransfer }}</td>
-      <td>{{ student.email }}</td>
-      <td>{{ student.phoneNumber }}</td>
-      <td>{{ student.address }}</td>
-      <td>{{ student.motherName }}</td>
-      <td>{{ student.motherPhoneNumber }}</td>
-      <td>{{ student.fatherName }}</td>
-      <td>{{ student.fatherPhoneNumber }}</td>
-      <td>{{ student.dateOfBirth | date }}</td>
+      <td>{{ teacher.fullName }}</td>
+      <td>{{ teacher.subjectName }}</td>
+      <td>{{ teacher.gender | genTransfer }}</td>
+      <td>{{ teacher.email }}</td>
+      <td>{{ teacher.phoneNumber }}</td>
+      <td>{{ teacher.address }}</td>
+      <td>{{ teacher.dateOfBirth | date }}</td>
       <td>
         <button
           class="btn"
-          [ngClass]="student.active ? 'btn-success' : 'btn-danger'"
+          [ngClass]="teacher.active ? 'btn-success' : 'btn-danger'"
           disabled
         >
-          {{ student.active | stateTransfer }}
+          {{ teacher.active | stateTransfer }}
         </button>
       </td>
     </tr>
@@ -98,7 +82,13 @@
       [draggable]="false"
       [resizable]="false"
     >
-      <p>Bạn có chắc chắn muốn xóa học sinh</p>
+      <p>
+        Bạn có chắc chắn muốn xóa giáo viên "
+        <b>
+          {{ teacher.fullName }}
+        </b>
+        "
+      </p>
       <ng-template pTemplate="footer">
         <p-button
           (click)="visible = false"
@@ -106,7 +96,7 @@
           class="btn-danger"
         ></p-button>
         <p-button
-          (click)="removeStudent()"
+          (click)="removeTeacher()"
           label="Ok"
           class="btn-success"
         ></p-button>

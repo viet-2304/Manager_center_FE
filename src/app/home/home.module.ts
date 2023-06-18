@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FooterComponent } from '../components/footer/footer.component';
-import { HeaderComponent } from '../components/header/header.component';
+
 import { HomeRouting } from './home.routing';
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -8,13 +7,19 @@ import { TeacherItemComponent } from './components/teacher-item/teacher-item.com
 import { CommonModule } from '@angular/common';
 import { TeacherSessionComponent } from './components/teacher-session/teacher-session.component';
 import { CourseSessionComponent } from './components/course-session/course-session.component';
-import { CourseItemComponent } from './components/course-item/course-item.component';
 import { CategorySessionComponent } from './components/category-session/category-session.component';
-
+import { CourseItemsModule } from '../shared/course-items/course-item.module';
+import { CarouselModule } from 'primeng/carousel';
 @NgModule({
-  imports: [HomeRouting,CommonModule],
+  imports: [HomeRouting, CommonModule, CourseItemsModule, CarouselModule],
   exports: [],
-  declarations: [HomePageComponent,  TeacherItemComponent, TeacherSessionComponent, CourseSessionComponent, CourseItemComponent, CategorySessionComponent],
+  declarations: [
+    HomePageComponent,
+    TeacherItemComponent,
+    TeacherSessionComponent,
+    CourseSessionComponent,
+    CategorySessionComponent,
+  ],
   providers: [],
 })
 export class HomeModule {}

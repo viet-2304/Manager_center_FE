@@ -1,0 +1,83 @@
+<div class="course-card">
+  <figure class="card-banner">
+    <img
+      src="https://codewithsadee.github.io/eduhome/assets/images/course-1.jpg"
+      width="370"
+      height="270"
+      loading="lazy"
+      alt="Competitive Strategy law for all students"
+      class="img-cover"
+    />
+  </figure>
+  <!--
+  <div class="card-actions">
+    <span class="badge">Intermediate</span>
+
+    <button
+      class="whishlist-btn"
+      aria-label="Add to whishlist"
+      data-whish-btn
+    ></button>
+  </div> -->
+
+  <div class="card-content d-flex w-100 flex-column">
+    <!-- <ul class="card-meta-list">
+      <li class="card-meta-item">
+        <span class="card-meta-text">35 Lessons</span>
+      </li>
+
+      <li class="card-meta-item">
+        <time datetime="PT18H15M44S" class="card-meta-text"
+          >18h 15m 44s</time
+        >
+      </li>
+    </ul> -->
+    <div class="d-flex  justify-content-between w-100">
+
+    <div>
+      <h4>Môn học:</h4>
+      <h3 class="h3">
+        {{ course.courseName }}
+      </h3>
+    </div>
+
+    <div>
+      <h4>Giáo viên:</h4>
+    </div>
+  </div>
+
+
+    <!-- <div class="rating-wrapper">
+      <div class="rating"></div>
+
+      <span class="rating-text">(18 Review)</span>
+    </div> -->
+
+    <div class="card-footer">
+      <!-- <div class="card-price">
+        <span class="span">$29.00</span>
+
+        <del class="del">$39.00</del>
+      </div> -->
+
+      <div class="card-meta-item d-flex justify-content-between w-100">
+        <span class="card-meta-text"
+          >{{ course.currentQuantity }} Học Sinh</span
+        >
+        <span>
+          <button class="btn btn-link btn-lg fs-4"  (click)="openCourseDetail(course.courseId)">
+            Xem chi tiết
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </span>
+      </div>
+
+    </div>
+    <hr>
+    <div>
+      <button class="btn btn-primary w-100 btn-lg p-2 fs-4">
+        Đăng ký ngay
+      </button>
+    </div>
+  </div>
+</div>
