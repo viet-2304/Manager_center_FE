@@ -15,6 +15,8 @@ import { DialogModule } from 'primeng/dialog';
 import { StatePipe } from './pipes';
 import { GenPipe } from './pipes/gen.pipe';
 import { TeacherManagerTableComponent } from './components/teacher-manager-table/teacher-manager-table.component';
+import { CourseManagerTableComponent } from './components/course-manager-table/course-manager-table.component';
+import { CourseDetailTableComponent } from './components/course-detail-table/course-detail-table.component';
 @NgModule({
   declarations: [
     AdminPageComponent,
@@ -25,7 +27,9 @@ import { TeacherManagerTableComponent } from './components/teacher-manager-table
     ManagerRoomComponent,
     StatePipe,
     GenPipe,
-    TeacherManagerTableComponent
+    TeacherManagerTableComponent,
+    CourseManagerTableComponent,
+    CourseDetailTableComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +37,8 @@ import { TeacherManagerTableComponent } from './components/teacher-manager-table
     SidebarModule,
     ButtonModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    FormsModule
   ],
 })
 export class AdminModule {}

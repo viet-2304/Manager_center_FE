@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TeacherInfo } from '../../models/teacher.model';
+import { TeacherInfo, TeacherResponse } from '../../models/teacher.model';
 
 @Component({
   selector: 'app-teacher-item',
@@ -8,6 +8,6 @@ import { TeacherInfo } from '../../models/teacher.model';
 })
 export class TeacherItemComponent {
 
-  @Input() teacherInfor:TeacherInfo;
+  @Input() teacherInfor:TeacherResponse;
 
 }

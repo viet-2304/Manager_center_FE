@@ -4,6 +4,9 @@
       <div *ngSwitchCase="'teacher'">
         <app-teacher-manager-table></app-teacher-manager-table>
       </div>
+      <div *ngSwitchCase="'course'">
+       <app-course-manager-table></app-course-manager-table>
+      </div>
 
       <div *ngSwitchDefault>
         <app-student-manager-table></app-student-manager-table>

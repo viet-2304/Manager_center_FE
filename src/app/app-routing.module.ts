@@ -25,6 +25,7 @@ const appRouter = [
   },
   {
     path: 'admin',
+    component: DefaultLayoutComponent,
     loadChildren: () =>
       import('./modules/admin/admin.module').then((m) => m.AdminModule),
   },

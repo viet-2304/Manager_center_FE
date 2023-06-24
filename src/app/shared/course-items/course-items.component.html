@@ -43,6 +43,9 @@
 
     <div>
       <h4>Giáo viên:</h4>
+      <h3 class="h3">
+        {{ course.teacherDto.fullName }}
+      </h3>
     </div>
   </div>
 
@@ -75,9 +78,33 @@
     </div>
     <hr>
     <div>
-      <button class="btn btn-primary w-100 btn-lg p-2 fs-4">
+      <button class="btn btn-primary w-100 btn-lg p-2 fs-4" (click)="register()">
         Đăng ký ngay
       </button>
     </div>
+
+
+<p-dialog
+header="Xóa"
+[(visible)]="visible"
+[breakpoints]="{ '960px': '75vw' }"
+[style]="{ width: '50vw' }"
+[draggable]="false"
+[resizable]="false"
+>
+<p>Bạn có chắc chắn muốn xóa học sinh</p>
+<ng-template pTemplate="footer">
+  <p-button
+    (click)="visible = false"
+    label="Cancel"
+    class="btn-danger"
+  ></p-button>
+  <p-button
+    (click)="Oke(course.courseId)"
+    label="Ok"
+    class="btn-success"
+  ></p-button>
+</ng-template>
+</p-dialog>
   </div>
 </div>

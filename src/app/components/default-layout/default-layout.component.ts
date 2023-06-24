@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultLayoutComponent implements OnInit {
   private tokenAuth: string | null;
+  public path = window.location.pathname;
   constructor() {}
   public ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -15,8 +16,14 @@ export class DefaultLayoutComponent implements OnInit {
   }
 
   public authorization(): void {
-    window.location.href = '/home';
+    if (this.path === '/admin') {
+      if (!window.localStorage.getItem('authToken')) {
 
+        window.location.href = '/home';
+      }
+    } else {
+      window.location.href = '/home';
+    }
     // this.tokenAuth = window.localStorage.getItem('token');
     // if (this.tokenAuth) {
     //   window.location.href = '/home';

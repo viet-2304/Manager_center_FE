@@ -1,0 +1,61 @@
+<div class="course-detail">
+  <div class="card mb-3" style="max-width: 840px; overflow: hidden">
+    <div class="row p-0">
+      <h1
+        class="card-title text-center"
+        style="height: 50px; background-color: antiquewhite"
+      >
+        Chi tiết khóa học
+      </h1>
+
+      <div class="col-md-4">
+        <img
+          src="https://codewithsadee.github.io/eduhome/assets/images/course-1.jpg"
+          class="img-fluid rounded-start"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="d-flex align-items-center flex-column">
+            <ul *ngIf="courseDetail">
+              <li>
+                <span class="name"> Giáo viên: </span>
+                <span class="value">
+                  <!-- {{ courseDetail.teacherDto.fullName }} -->
+                </span>
+              </li>
+              <li>
+                <span  class="name"> Phòng học: </span>
+
+                <!-- <span>
+                  {{ courseDetail.roomDto.floorId
+                  }}{{ courseDetail.roomDto.roomId }}
+                </span> -->
+              </li>
+              <li>
+                <span  class="name"> Thời gian học: </span>
+                <!-- <span>
+                  {{ courseDetail.frommDate | date }} -
+                  {{ courseDetail.toDate | date }}
+                </span> -->
+              </li>
+              <li>
+                <span  class="name"> Môn học: </span>
+                <span>
+                  <!-- {{ courseDetail.courseName }} -->
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="m w-100"> -->
+
+    <button class="mt-5 btn btn-primary p-3" style="font-size: 20px">
+      ĐĂNG KÝ NGAY
+    </button>
+    <!-- </div> -->
+  </div>
+</div>

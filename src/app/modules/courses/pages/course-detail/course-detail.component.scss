@@ -1,0 +1,17 @@
+.course-detail{
+  margin-top: 7%;
+  width: auto;
+  margin-right: 20%;
+  margin-left: 20%;
+  li {
+    width: 100%;
+    display: flex;
+    .name {
+      margin-right: 30px;
+    }
+    .value {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}

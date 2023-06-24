@@ -14,8 +14,16 @@ export class CourseResponse {
   public courseId:string;
   public frommDate: string;
   public toDate: string;
-  public roomDto: RoomResponse;
   public courseName:string;
   public currentQuantity: number;
   public teacherDto: TeacherResponse;
+  public maxQuantity: number;
+  public price: number;
+}
+
+export class CourseStudentDto{
+  public id: string;
+  public studentId: string;
+  public courseId: string;
+
 }

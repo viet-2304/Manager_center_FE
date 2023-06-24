@@ -48,21 +48,26 @@
         </a>
       </div>
       <ng-template #userItem>
-        <div class="dropdown">
-          <!-- <div class="user-item"> -->
-          <button
-            type="button"
-            id="dropdownMenuButton1"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fa-regular fa-user"></i>
-          </button>
-          <!-- </div> -->
+        <div class="d-flex flex-row">
+          <span class="dropdown">
+            <!-- <div class="user-item"> -->
+            <button
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-regular fa-user"></i>
+            </button>
+            <!-- </div> -->
 
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" (click)="logout()">logout</a></li>
-          </ul>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" (click)="logout()">logout</a></li>
+            </ul>
+          </span>
+          <span class="ms-3">
+            {{ studentEmail }}
+          </span>
         </div>
       </ng-template>
     </div>

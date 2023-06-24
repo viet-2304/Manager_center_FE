@@ -1,14 +1,21 @@
-<div class="card" style="font-size: 20px;">
+<div class="card" style="font-size: 20px">
   <img
-    [src]="teacherInfor.imageUrl"
+    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80
+    "
     class="card-img-top"
     style="height: 25rem; object-fit: cover"
     alt="Avatar"
   />
   <div class="card-body">
-    <h5 class="card-title">{{ teacherInfor.name }}</h5>
-    <p class="card-text">{{ teacherInfor.description }}</p>
-    <a href="#" class="btn btn-primary">Các khóa học của giáo viên</a>
+    <div>
+      <h5 class="card-title">{{ teacherInfor.fullName }}</h5>
+    </div>
+    <div>
+      <p class="card-text">{{ teacherInfor.subjectName }}</p>
+    </div>
+    <button href="#" style="font-size: 20px" class="btn btn-primary">
+      Các khóa dạy
+    </button>
   </div>
 </div>
 <!--

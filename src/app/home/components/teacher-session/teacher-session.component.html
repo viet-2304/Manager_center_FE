@@ -1,39 +1,17 @@
 <div class="popular-teacher">
   <div style="margin-top: 100px">
-    <p class="section-subtitle text-center mt-5">TEACHER SUGGEST</p>
-    <h1 class="course-title text-center mb-5">Popular Teacher To Learn</h1>
+    <p class="section-subtitle text-center mt-5">GIÁO VIÊN</p>
+    <h1 class="course-title text-center mb-5">Các giáo viên ưu tú</h1>
     <div class="d-flex flex-wrap p-5">
-      <!-- <div *ngFor="let teacher of teacherInFors" class="col-4 mb-5 d-flex justify-content-center">
-        <app-teacher-item [teacherInfor]="teacher"></app-teacher-item>
-      </div> -->
-
       <p-carousel
-        [value]="teacherInFors"
+        [value]="teacher"
         [numVisible]="3"
         [numScroll]="3"
         [circular]="false"
-
-        >
-        <ng-template let-teacher pTemplate="item" >
-          <!-- <div
-            class="border-1 surface-border border-round m-2 text-center py-5 px-3"
-          >
-            <div class="mb-3">
-              <img
-                src="https://primefaces.org/cdn/primeng/images/demo/product/{{
-                  product.image
-                }}"
-                [alt]="product.name"
-                class="w-6 shadow-2"
-              />
-            </div>
-            <div>
-              <h4 class="mb-1">{{ product.name }}</h4>
-              <h6 class="mt-0 mb-3">{{ "$" + product.price }}</h6>
-            </div>
-          </div> -->
+      >
+        <ng-template let-teacher pTemplate="item">
           <div
-            class="border-1 surface-border border-round ms-5 text-center w-75 col-3 "
+            class="border-1 surface-border border-round ms-5 text-center w-75 col-3"
           >
             <app-teacher-item [teacherInfor]="teacher"></app-teacher-item>
           </div>

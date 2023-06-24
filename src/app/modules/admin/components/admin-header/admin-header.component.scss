@@ -1,16 +1,69 @@
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 40px;
-  background-color: aliceblue;
+// .navbar {
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   height: 40px;
+//   background-color: aliceblue;
 
-  .user-action {
-    margin-right: 100px;
-    .user-dropdown {
-      border: 1px black solid;
-      border-radius: 50%;
-      width: 35px;
+//   .user-action {
+//     margin-right: 100px;
+//     .user-dropdown {
+//       border: 1px black solid;
+//       border-radius: 50%;
+//       width: 35px;
+//     }
+//   }
+// }
+
+.navbar {
+  width: 1228px;
+  background-color: #fff;
+  overflow: auto;
+  margin-left: auto;
+  // border-bottom: 1px solid black;
+  box-shadow: rgba(112, 144, 176, 0.18) 14px 17px 50px 4px;
+
+  .input-box {
+    margin-left: 2rem;
+
+    border-bottom: 2px solid #000;
+
+    .input-search {
+      height: 50px;
+      width: 300px;
+      // border-bottom: 2px solid #000;
+      border: none;
     }
+    .icon-search {
+      margin-left: -26px;
+    }
+  }
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: #000;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+/* Current/active navbar link */
+.active {
+  background-color: #04aa6d;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
   }
 }

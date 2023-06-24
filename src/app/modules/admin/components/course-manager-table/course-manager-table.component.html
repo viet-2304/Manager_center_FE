@@ -1,0 +1,87 @@
+<p-table
+  [value]="course"
+  [tableStyle]="{
+    'min-width': '80rem',
+    'font-size': '15px',
+    border: '1px soild black'
+  }"
+  scrollHeight="450px"
+  dataKey="courseId"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th></th>
+      <th>Tên môn học</th>
+      <th>Bắt đầu</th>
+      <th>Kết thúc</th>
+      <th>Số lượng tối đa</th>
+      <th>Số lượng hiện tại</th>
+      <th>Giá</th>
+      <th>Giáo viên</th>
+      <th>Danh sách học sinh</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th pSortableColumn="name">
+        <p-sortIcon field="name"></p-sortIcon>
+      </th>
+      <th pSortableColumn="startDate">
+        <p-sortIcon field="startDate"></p-sortIcon>
+      </th>
+      <th pSortableColumn="endDate">
+        <p-sortIcon field="endDate"></p-sortIcon>
+      </th>
+      <th pSortableColumn="maxQuantity">
+        <p-sortIcon field="maxQuantity"></p-sortIcon>
+      </th>
+      <th pSortableColumn="currentQuantity">
+        <p-sortIcon field="currentQuantity"></p-sortIcon>
+      </th>
+      <th pSortableColumn="price">
+        <p-sortIcon field="price"></p-sortIcon>
+      </th>
+      <th pSortableColumn="teacher">
+        <p-sortIcon field="teacher"></p-sortIcon>
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-course let-expanded="expanded">
+    <tr>
+      <td style="width: 10px">
+        <!-- button expand list product of collection -->
+        <button
+          type="button"
+          pButton
+          pRipple
+          [pRowToggler]="course"
+          class="p-button-text p-button-rounded p-button-plain"
+          [icon]="
+            expanded ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-right'
+          "
+        ></button>
+      </td>
+      <td>{{ course.courseName }}</td>
+      <td>{{ course.frommDate | date }}</td>
+      <td>{{ course.toDate | date }}</td>
+      <td>{{ course.maxQuantity }}</td>
+      <td>{{ course.currentQuantity }}</td>
+      <td>{{ course.price }}</td>
+      <td>{{ course.teacherDto.fullName }}</td>
+      <td>
+        <button>
+          <i class="fa-regular fa-eye"></i>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="rowexpansion" let-course>
+    <tr>
+      <td colspan="8">
+        <app-course-detail-table
+          [courseId]="course.courseId"
+        ></app-course-detail-table>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
