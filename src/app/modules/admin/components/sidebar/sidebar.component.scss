@@ -29,6 +29,15 @@
   overflow-x: hidden;
   padding-top: 16px;
   box-shadow: rgba(112, 144, 176, 0.18) 14px 17px 40px 4px;
+  .img-logo{
+    margin-left: 4.5rem;
+  }
+  .text-logo{
+    margin-left: 1rem;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fff;
+  }
   .svg-logo{
     color: #000;
   }
@@ -40,7 +49,7 @@
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #000;
+  color: #fff;
   display: block;
 }
 

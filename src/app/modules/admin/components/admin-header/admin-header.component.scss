@@ -16,27 +16,27 @@
 // }
 
 .navbar {
-  width: 1228px;
-  background-color: #fff;
-  overflow: auto;
-  margin-left: auto;
-  // border-bottom: 1px solid black;
-  box-shadow: rgba(112, 144, 176, 0.18) 14px 17px 50px 4px;
+  // position: relative;
+  width: 1120px !important;
+  height: 60px;
+  // background-color: #fff;
+  // overflow: auto;
+   margin-left: auto;
 
-  .input-box {
-    margin-left: 2rem;
+  // box-shadow: rgba(112, 144, 176, 0.18) 14px 17px 50px 4px;
 
-    border-bottom: 2px solid #000;
+  .input-search {
 
-    .input-search {
-      height: 50px;
-      width: 300px;
-      // border-bottom: 2px solid #000;
-      border: none;
-    }
-    .icon-search {
-      margin-left: -26px;
-    }
+    width: 260px;
+    // border-bottom: 2px solid #000;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .btn-icon-search{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 36px;
   }
 }
 
