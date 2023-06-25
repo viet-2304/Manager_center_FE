@@ -3,7 +3,6 @@ import { Store } from '@ngrx/store';
 import { CurrentUser } from 'src/app/authorization/models/Login.model';
 import { StudentModel } from 'src/app/home/services/user.model';
 import { AdminService } from '../../service/admin.service';
-import { StatePipe } from '../../pipes/state.pipe';
 @Component({
   selector: 'app-student-manager-table',
   templateUrl: './student-manager-table.component.html',

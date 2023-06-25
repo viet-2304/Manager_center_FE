@@ -1,0 +1,23 @@
+<div class="list-student">
+  <p-table
+    [value]="listStudent"
+    [tableStyle]="{
+      'font-size': '16px'
+    }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Tên</th>
+        <th>Giới tính</th>
+        <th>Số Điện Thoại</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-student>
+      <tr>
+        <td>{{ student.fullName }}</td>
+        <td>{{ student.gender | genTransfer }}</td>
+        <td>{{ student.phoneNumber }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

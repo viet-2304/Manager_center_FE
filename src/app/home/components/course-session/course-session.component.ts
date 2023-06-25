@@ -23,6 +23,8 @@ export class CourseSessionComponent {
 
   public getAllCourse(): void {
     this.courseService.getAllCourse().subscribe((res) => {
+      console.log("course: ", this.courses);
+
       this.courses = res.slice(0,3);
       this.cdr.detectChanges();
     });

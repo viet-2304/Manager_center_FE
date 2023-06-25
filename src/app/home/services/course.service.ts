@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { CourseResponse, CourseStudentDto } from '../models/course.model';
 import { CourseDetailModel } from 'src/app/modules/courses/models/course.model';
+import { StudentModel } from './user.model';
+import { StudentAttendanceModel } from 'src/app/shared/models/student-attendance.model';
 
 @Injectable({ providedIn: 'root' })
 export class CourseService {
@@ -17,16 +19,34 @@ export class CourseService {
     );
   }
 
-  public addStudentToCourse( course: CourseStudentDto): Observable<string> {
+  public addStudentToCourse(course: CourseStudentDto): Observable<string> {
     return this.httpClient.post<string>(
-      `${this.apiHost}/courses/addStudentToCourse`,course
-    )
+      `${this.apiHost}/courses/addStudentToCourse`,
+      course
+    );
   }
 
   public getCourseDetail(courseId: string): Observable<CourseDetailModel[]> {
     return this.httpClient.get<CourseDetailModel[]>(
       `${this.apiHost}/courses/detail?courseId=${courseId}`
-    )
+    );
+  }
+
+  public getStudentInCourse(courseID: string): Observable<StudentModel[]> {
+    return this.httpClient.get<StudentModel[]>(
+      `${this.apiHost}/courses/getStudent?courseId=${courseID}`
+    );
+  }
+
+  public getAttendance(
+    courseDetailid: string
+  ): Observable<StudentAttendanceModel[]> {
+    return this.httpClient.get<StudentAttendanceModel[]>(
+      `${this.apiHost}/attendance/getAttendance?courseId=${courseDetailid}`
+    );
+  }
+
+  public getCourseById(courseId: string): Observable<CourseResponse> {
+    return this.httpClient.get<CourseResponse> (`${this.apiHost}/courses?courseId=${courseId}`)
   }
 }
-

@@ -21,8 +21,13 @@ export class CourseItemsComponent {
   @Input() course: CourseResponse;
   private data: CourseStudentDto = new CourseStudentDto();
 
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log('course: ', this.course);
+  }
   public openCourseDetail(id: string): void {
-    this.router.navigate(['/course/detail'],{ queryParams: { id: id }});
+    this.router.navigate(['/course/detail'], { queryParams: { id: id } });
   }
 
   public register(): void {

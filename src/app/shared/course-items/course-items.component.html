@@ -32,23 +32,21 @@
         >
       </li>
     </ul> -->
-    <div class="d-flex  justify-content-between w-100">
+    <div class="d-flex justify-content-between w-100">
+      <div>
+        <h4>Môn học:</h4>
+        <h3 class="h3">
+          {{ course.courseName }}
+        </h3>
+      </div>
 
-    <div>
-      <h4>Môn học:</h4>
-      <h3 class="h3">
-        {{ course.courseName }}
-      </h3>
+      <div>
+        <h4>Giáo viên:</h4>
+        <h3 class="h3">
+          {{ course.teacherDto.fullName }}
+        </h3>
+      </div>
     </div>
-
-    <div>
-      <h4>Giáo viên:</h4>
-      <h3 class="h3">
-        {{ course.teacherDto.fullName }}
-      </h3>
-    </div>
-  </div>
-
 
     <!-- <div class="rating-wrapper">
       <div class="rating"></div>
@@ -68,23 +66,27 @@
           >{{ course.currentQuantity }} Học Sinh</span
         >
         <span>
-          <button class="btn btn-link btn-lg fs-4"  (click)="openCourseDetail(course.courseId)">
+          <button
+            class="btn btn-link btn-lg fs-4"
+            (click)="openCourseDetail(course.courseId)"
+          >
             Xem chi tiết
             <i class="fa-solid fa-arrow-right"></i>
           </button>
         </span>
       </div>
-
     </div>
-    <hr>
+    <hr />
     <div>
-      <button class="btn btn-primary w-100 btn-lg p-2 fs-4" (click)="register()">
+      <button
+        class="btn btn-primary w-100 btn-lg p-2 fs-4"
+        (click)="openCourseDetail(course.courseId)"
+      >
         Đăng ký ngay
       </button>
     </div>
 
-
-<p-dialog
+    <!-- <p-dialog
 header="Xóa"
 [(visible)]="visible"
 [breakpoints]="{ '960px': '75vw' }"
@@ -105,6 +107,6 @@ header="Xóa"
     class="btn-success"
   ></p-button>
 </ng-template>
-</p-dialog>
+</p-dialog> -->
   </div>
 </div>

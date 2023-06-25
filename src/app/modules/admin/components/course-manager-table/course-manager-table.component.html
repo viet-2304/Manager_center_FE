@@ -2,10 +2,10 @@
   [value]="course"
   [tableStyle]="{
     'min-width': '80rem',
-    'font-size': '15px',
+    'font-size': '16px',
     border: '1px soild black'
   }"
-  scrollHeight="450px"
+  scrollHeight="530px"
   dataKey="courseId"
 >
   <ng-template pTemplate="header">
@@ -62,22 +62,24 @@
         ></button>
       </td>
       <td>{{ course.courseName }}</td>
-      <td>{{ course.frommDate | date }}</td>
-      <td>{{ course.toDate | date }}</td>
+      <td>{{ course.frommDate | date: 'dd/MM/yyyy'  }}</td>
+      <td>{{ course.toDate | date: 'dd/MM/yyyy'  }}</td>
       <td>{{ course.maxQuantity }}</td>
       <td>{{ course.currentQuantity }}</td>
       <td>{{ course.price }}</td>
       <td>{{ course.teacherDto.fullName }}</td>
       <td>
-        <button>
-          <i class="fa-regular fa-eye"></i>
-        </button>
+        <p-button
+          (click)="showListStudent(course.courseId)"
+          icon="fa-regular fa-eye"
+        >
+        </p-button>
       </td>
     </tr>
   </ng-template>
   <ng-template pTemplate="rowexpansion" let-course>
     <tr>
-      <td colspan="8">
+      <td colspan="9">
         <app-course-detail-table
           [courseId]="course.courseId"
         ></app-course-detail-table>

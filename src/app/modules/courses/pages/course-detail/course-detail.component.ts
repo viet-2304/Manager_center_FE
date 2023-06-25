@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { CourseResponse } from 'src/app/home/models/course.model';
 import { CourseService } from 'src/app/home/services/course.service';
@@ -9,13 +10,17 @@ import { CourseDetailModel } from '../../models/course.model';
   selector: 'app-course-detail',
   templateUrl: './course-detail.component.html',
   styleUrls: ['./course-detail.component.scss'],
+
+  providers: [CurrencyPipe],
 })
 export class CourseDetailComponent {
-  public courseDetail: CourseDetailModel;
+  public courseDetail: CourseResponse;
 
   constructor(
     private courseService: CourseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef,
+    private currencyPipe: CurrencyPipe
   ) {}
 
   ngOnInit(): void {
@@ -29,8 +34,9 @@ export class CourseDetailComponent {
     this.route.queryParams.subscribe((param: Params) => {
       courseId = param['id'];
     });
-    this.courseService.getCourseDetail(courseId).subscribe((res) => {
-      // this.courseDetail = res;
+    this.courseService.getCourseById(courseId).subscribe((res) => {
+      this.courseDetail = res;
+      this.cdr.detectChanges();
       console.log('course detail: ', res);
     });
   }

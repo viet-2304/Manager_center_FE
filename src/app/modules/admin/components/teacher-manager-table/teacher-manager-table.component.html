@@ -5,7 +5,8 @@
     'font-size': '15px',
     border: '1px soild black'
   }"
-  scrollHeight="450px"
+  scrollHeight="530px"
+
 >
   <ng-template pTemplate="header">
     <tr>
@@ -62,7 +63,7 @@
       <td>{{ teacher.email }}</td>
       <td>{{ teacher.phoneNumber }}</td>
       <td>{{ teacher.address }}</td>
-      <td>{{ teacher.dateOfBirth | date }}</td>
+      <td>{{ teacher.dateOfBirth | date: 'dd/MM/yyyy'  }}</td>
       <td>
         <button
           class="btn"

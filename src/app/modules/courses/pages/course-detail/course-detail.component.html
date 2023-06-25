@@ -22,28 +22,35 @@
               <li>
                 <span class="name"> Giáo viên: </span>
                 <span class="value">
-                  <!-- {{ courseDetail.teacherDto.fullName }} -->
+                  {{ courseDetail.teacherDto.fullName }}
                 </span>
               </li>
               <li>
-                <span  class="name"> Phòng học: </span>
+                <span class="name"> Số lượng hiện tại: </span>
 
-                <!-- <span>
-                  {{ courseDetail.roomDto.floorId
-                  }}{{ courseDetail.roomDto.roomId }}
-                </span> -->
-              </li>
-              <li>
-                <span  class="name"> Thời gian học: </span>
-                <!-- <span>
-                  {{ courseDetail.frommDate | date }} -
-                  {{ courseDetail.toDate | date }}
-                </span> -->
-              </li>
-              <li>
-                <span  class="name"> Môn học: </span>
                 <span>
-                  <!-- {{ courseDetail.courseName }} -->
+                  {{ courseDetail.currentQuantity }} / {{
+                    courseDetail.maxQuantity
+                  }}
+                </span>
+              </li>
+              <li>
+                <span class="name"> Môn học: </span>
+                <span>
+                  {{ courseDetail.courseName }}
+                </span>
+              </li>
+              <li>
+                <span class="name"> Giá: </span>
+                <span>
+                  {{ courseDetail.price | currency: 'VND'}}
+                </span>
+              </li>
+              <li>
+                <span class="name"> Thời gian học: </span>
+                <span>
+                  {{ courseDetail.frommDate | date : "dd/MM/yyyy" }} -
+                  {{ courseDetail.toDate | date : "dd/MM/yyyy" }}
                 </span>
               </li>
             </ul>
