@@ -34,6 +34,13 @@ const appRouter = [
     loadChildren: () =>
       import('./modules/courses/course.module').then((m) => m.CourseModule),
   },
+  {
+    path: 'user-info',
+    loadChildren: () =>
+      import(
+        './shared/user-information-form/user-information-form.module'
+      ).then((m) => m.UserInformation),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRouter, {})],

@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { httpInterceptorProviders } from './core/interceptor';
 import { NgxsModule } from '@ngxs/store';
+import { CreateCourseModalComponent } from './shared/create-course-modal/create-course-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NgxsModule } from '@ngxs/store';
     DefaultLayoutComponent,
     HeaderComponent,
     FooterComponent,
+    CreateCourseModalComponent,
   ],
   imports: [
     BrowserModule,

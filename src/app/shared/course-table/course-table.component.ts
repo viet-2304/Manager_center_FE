@@ -2,17 +2,18 @@ import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
 import { CourseResponse } from 'src/app/home/models/course.model';
 import { CourseService } from 'src/app/home/services/course.service';
+import { CreateCourseModalComponent } from '../create-course-modal/create-course-modal.component';
 import { ListStudentInCourseComponent } from '../list-student-in-course/list-student-in-course.component';
 
 @Component({
   selector: 'app-course-table',
   templateUrl: './course-table.component.html',
   styleUrls: ['./course-table.component.scss'],
-  providers: [DialogService]
+  providers: [DialogService],
 })
 export class CourseTableComponent {
   public course: CourseResponse[];
-  @Input() auth: string = "admin";
+  @Input() auth: string = 'admin';
   @Input() teacherId: string;
   constructor(
     private courseService: CourseService,
@@ -49,8 +50,12 @@ export class CourseTableComponent {
     });
   }
 
+  public createCourse(): void {
+    this.dialogService.open(CreateCourseModalComponent, {});
+  }
+
   private getCourse(): void {
-    console.log("auth: ", this.auth);
+    console.log('auth: ', this.auth);
 
     if (this.auth === 'admin') {
       this.courseService.getAllCourse().subscribe((res) => {

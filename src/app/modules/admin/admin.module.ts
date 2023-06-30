@@ -31,7 +31,7 @@ import { TeacherRegisterForm } from 'src/app/shared/register-teacher-form/regist
     StudentManagerTableComponent,
     ManagerRoomComponent,
     TeacherManagerTableComponent,
-    CourseDetailTableComponent
+    CourseDetailTableComponent,
   ],
   imports: [
     CourseDetailTableModule,
