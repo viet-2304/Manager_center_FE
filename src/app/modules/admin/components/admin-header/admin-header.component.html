@@ -60,9 +60,14 @@
       data-bs-display="static"
       aria-expanded="false"
     >
-      <i class="fa-solid fa-user"></i>
+      <div class="d-flex">
+        <img
+          src="https://codewithsadee.github.io/eduhome/assets/images/course-1.jpg"
+          class="avatar"
+        />
+        <span>{{ currentAdmin.email.split("@")[0] }}</span>
+      </div>
     </button>
-    {{ currentAdmin?.email }}
     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
       <li>
         <button class="dropdown-item" type="button" (click)="logout()">

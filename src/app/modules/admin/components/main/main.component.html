@@ -1,11 +1,11 @@
-<div class="main-page bg-light" style="width: 84vw">
+<div class="main-page bg-light" style="width: 81vw">
   <div class="content mt-5">
     <div [ngSwitch]="sidebarSelected">
       <div *ngSwitchCase="'teacher'">
         <app-teacher-manager-table></app-teacher-manager-table>
       </div>
       <div *ngSwitchCase="'course'">
-      <app-course-table></app-course-table>
+        <app-course-table></app-course-table>
       </div>
       <div *ngSwitchDefault>
         <app-student-manager-table></app-student-manager-table>

@@ -57,7 +57,15 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="fa-regular fa-user"></i>
+              <div class="d-flex">
+                <img
+                  src="https://codewithsadee.github.io/eduhome/assets/images/course-1.jpg"
+                  class="avatar"
+                />
+                <span class="ms-3">
+                  {{ studentEmail.split("@")[0] }}
+                </span>
+              </div>
             </button>
             <!-- </div> -->
 
@@ -67,11 +75,13 @@
                   Khóa học của tôi
                 </a>
               </li>
+              <li>
+                <a class="dropdown-item" href="/user-info">
+                  Thông tin cá nhân
+                </a>
+              </li>
               <li><a class="dropdown-item" (click)="logout()">logout</a></li>
             </ul>
-          </span>
-          <span class="ms-3">
-            {{ studentEmail }}
           </span>
         </div>
       </ng-template>

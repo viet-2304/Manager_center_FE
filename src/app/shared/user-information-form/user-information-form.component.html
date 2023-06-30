@@ -1,1 +1,174 @@
-<p>user-information-form works!</p>
+<div class="wrap-info py-5">
+  <section class="h-100 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-9 col-xl-10">
+          <div class="card">
+            <div
+              class="rounded-top text-white d-flex flex-row"
+              style="
+                background-image: url('https://online.glyndwr.ac.uk/wp-content/uploads/2022/09/Hands-on-a-laptop-with-holograms-with-education-icons-on-over-the-top.jpg');
+                height: 200px;
+                background-size: cover;
+                background-repeat: no-repeat;
+              "
+            >
+              <div
+                class="ms-4 mt-5 d-flex flex-column"
+                style="width: 150px; height: 200px"
+              >
+                <img
+                  src="https://codewithsadee.github.io/eduhome/assets/images/course-1.jpg"
+                  alt="Generic placeholder image"
+                  class="img-fluid img-thumbnail mt-4 mb-2"
+                  style="
+                    width: 150px;
+                    height: 200px;
+                    z-index: 1;
+                    object-fit: cover;
+                  "
+                />
+                <button
+                  type="button"
+                  class="btn btn-outline-dark"
+                  data-mdb-ripple-color="dark"
+                  style="z-index: 1"
+                >
+                  <i class="fa-solid fa-camera"></i> Sửa ảnh đại diện
+                </button>
+              </div>
+              <div class="ms-3" style="margin-top: 130px">
+                <h4>Student01</h4>
+                <p>
+                  <i class="fa-solid fa-location-dot"></i> Đà Nẵng, Việt Nam
+                </p>
+              </div>
+            </div>
+            <div class="p-4 text-black" style="background-color: #f8f9fa">
+              <div class="d-flex justify-content-end text-center py-1">
+                <button class="btn btn-outline-primary">
+                  Thay đổi mật khẩu <i class="fa-solid fa-key"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-4 text-black">
+              <div class="mb-5">
+                <h4 class="lead fw-normal mb-1">Thông tin cá nhân</h4>
+                <div class="p-4" style="background-color: #f8f9fa">
+                  <form class="needs-validation" novalidate="">
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <label for="username" class="form-label"
+                          >Họ và tên</label
+                        >
+                        <div class="input-group has-validation">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            placeholder="Username"
+                            required=""
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <label for="birthday" class="form-label"
+                          >Ngày sinh</label
+                        >
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="birthday"
+                          placeholder=""
+                          value=""
+                          required=""
+                        />
+                      </div>
+                      <div class="col-sm-3">
+                        <label for="state" class="form-label">Giới tính</label>
+                        <select class="form-select" id="state" required="">
+                          <option value="">Nam</option>
+                          <option value="">Nữ</option>
+                        </select>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <label for="name-parent" class="form-label"
+                          >Họ và tên phụ huynh</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name-parent"
+                          placeholder=""
+                          value=""
+                          required=""
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="phone-parent" class="form-label"
+                          >SĐT phụ huynh</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name-parent"
+                          placeholder=""
+                          value=""
+                          required=""
+                        />
+                      </div>
+
+                      <div class="col-12">
+                        <label for="email" class="form-label">Email </label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          placeholder="you@example.com"
+                          disabled
+                        />
+                      </div>
+
+                      <div class="col-12">
+                        <label for="address" class="form-label">Địa chỉ</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="address"
+                          placeholder="1234 Main St"
+                          required=""
+                        />
+                      </div>
+
+                      <div class="col-12">
+                        <label for="phone-number" class="form-label"
+                          >Số điện thoại</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="phone-number"
+                          placeholder="0920290029"
+                          required=""
+                          value=""
+                        />
+                      </div>
+                    </div>
+
+                    <hr class="my-4" />
+
+                    <button class="w-100 btn btn-success btn-lg" type="submit">
+                      Lưu thông tin
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

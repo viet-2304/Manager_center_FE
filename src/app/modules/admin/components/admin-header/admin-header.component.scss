@@ -16,7 +16,14 @@
     // }
   }
 
-
+.avatar{
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .navbar {
   // position: relative;
   width: 1146px !important;
