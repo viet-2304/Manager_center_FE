@@ -51,7 +51,9 @@ export class CourseTableComponent {
   }
 
   public createCourse(): void {
-    this.dialogService.open(CreateCourseModalComponent, {});
+    this.dialogService.open(CreateCourseModalComponent, {
+      width: '70%'
+    });
   }
 
   private getCourse(): void {
