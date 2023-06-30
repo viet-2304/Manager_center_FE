@@ -1,0 +1,63 @@
+// li {
+//   color: bisque;
+//   margin-top: 2em;
+//   width: 150px;
+//   font-size: larger;
+//   border: none;
+//   // padding-left: 10px;
+//   // padding-right: 50px;
+
+//   .active {
+//     background-color: aliceblue;
+//     color: black;
+//   }
+// }
+
+// .logo {
+//   color: cornflowerblue;
+//   font-size: larger;
+// }
+
+.sidebar {
+  height: 100%;
+  width: 230px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: hsl(235, 87%, 68%);;
+  overflow-x: hidden;
+  padding-top: 16px;
+  box-shadow: rgba(112, 144, 176, 0.18) 14px 17px 40px 4px;
+  .svg-logo{
+    color: #000;
+  }
+}
+
+/* Style sidebar links */
+.sidebar li {
+  cursor: pointer;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  display: block;
+}
+
+/* Style links on mouse-over */
+.sidebar li:hover {
+  color: blanchedalmond;
+}
+
+/* Style the main content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+

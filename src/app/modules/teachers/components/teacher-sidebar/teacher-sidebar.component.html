@@ -1,0 +1,48 @@
+<div class="sidebar px-2">
+  <div _ngcontent-yif-c3="" class="logo d-flex align-items-center my-4">
+    <a _ngcontent-yif-c3="" href="home" title="Lunya" data-location="internal">
+      <span class="d-none d-sm-inline logo">EduAcademy</span>
+    </a>
+  </div>
+  <!-- <a href="#home" ><i class="fa fa-fw fa-home"></i> Home</a>
+  <a  (click)="active('collection')"><i class="fa-brands fa-stack-overflow"></i> Collection</a>
+  <a (click)="active('fabric')"><i class="fa-solid fa-shirt"></i> Fabric</a> -->
+  <!-- <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a> -->
+  <ul
+    class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+    id="menu"
+  >
+    <!-- <li
+
+          [ngClass]="menuActive == 'student' ? 'active' : ''"
+          (click)="active('student')"
+        >
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="ms-3 d-none d-sm-inline">Học sinh</span>
+        </li>
+        <hr class="sidebar-divider my-0" /> -->
+
+    <!-- <li
+
+          [ngClass]="menuActive == 'teacher' ? 'active' : ''"
+          (click)="active('teacher')"
+        >
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span class="ms-3 d-none d-sm-inline">Giáo viên</span>
+        </li> -->
+    <li
+      [ngClass]="menuActive == 'course' ? 'active' : ''"
+      (click)="active('course')"
+    >
+      <i class="fa-solid fa-door-open"></i>
+      <span class="ms-3 d-none d-sm-inline">Khóa học</span>
+    </li>
+    <li
+      [ngClass]="menuActive == 'course' ? 'active' : ''"
+      (click)="active('course')"
+    >
+      <i class="fa-solid fa-layer-group"></i>
+      <span class="ms-3 d-none d-sm-inline">Khóa học</span>
+    </li>
+  </ul>
+</div>
