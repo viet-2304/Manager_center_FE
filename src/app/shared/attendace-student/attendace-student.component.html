@@ -19,7 +19,7 @@
       <ng-template pTemplate="body" let-student>
         <tr>
           <td>{{ student.studentName }}</td>
-          <td>{{ student.attendanceStatus }}</td>
+          <td>{{ student.attendanceStatus | attendanceTransfer }}</td>
           <td>{{ student.description }}</td>
         </tr>
       </ng-template>

@@ -13,7 +13,7 @@ export class FooterComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.role = window.localStorage.getItem('role');
-    if (this.role === 'admin') {
+    if (this.role === 'admin' || this.role === 'teacher') {
       this.isShow = false;
       this.cdr.detectChanges();
     }

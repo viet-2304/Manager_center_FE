@@ -17,6 +17,7 @@ export class HeaderComponent {
   public isShow = true;
   public role: string | null;
   public studentEmail: string;
+  public studentId: string;
 
   public currentEmail = window.localStorage.getItem('email') ?? '';
   constructor(
@@ -37,7 +38,7 @@ export class HeaderComponent {
   public getCurrentUser(): void {
     this.role = window.localStorage.getItem('role');
     let path = window.location.pathname;
-    if (path === '/admin') {
+    if (path === '/admin' || path ==='/teacher') {
       this.isShow = false;
     } else {
       this.isShow = true;
@@ -49,6 +50,7 @@ export class HeaderComponent {
           next: (res) => {
             if (res) {
               this.studentEmail = res.email;
+              // this.studentId = res.
               this.isLogin = true;
               this.cdr.detectChanges();
             }
@@ -67,5 +69,9 @@ export class HeaderComponent {
 
   public redirect(url: string): void {
     window.location.replace(url);
+  }
+
+  public redirectToCourse(): void {
+    window.location.href = '/home/myCourse'
   }
 }

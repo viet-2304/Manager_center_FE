@@ -5,19 +5,21 @@
 //   height: 40px;
 //   background-color: aliceblue;
 
-//   .user-action {
-//     margin-right: 100px;
-//     .user-dropdown {
-//       border: 1px black solid;
-//       border-radius: 50%;
-//       width: 35px;
-//     }
-//   }
-// }
+  .user-action {
+    display: flex;
+    align-items: center;
+    // margin-right: 100px;
+    // .user-dropdown {
+    //   border: 1px black solid;
+    //   border-radius: 50%;
+    //   width: 35px;
+    // }
+  }
+
 
 .navbar {
   // position: relative;
-  width: 1120px !important;
+  width: 1146px !important;
   height: 60px;
   // background-color: #fff;
   // overflow: auto;

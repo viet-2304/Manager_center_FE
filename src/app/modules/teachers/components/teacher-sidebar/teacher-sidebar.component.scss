@@ -1,23 +1,3 @@
-// li {
-//   color: bisque;
-//   margin-top: 2em;
-//   width: 150px;
-//   font-size: larger;
-//   border: none;
-//   // padding-left: 10px;
-//   // padding-right: 50px;
-
-//   .active {
-//     background-color: aliceblue;
-//     color: black;
-//   }
-// }
-
-// .logo {
-//   color: cornflowerblue;
-//   font-size: larger;
-// }
-
 .sidebar {
   height: 100%;
   width: 230px;
@@ -29,6 +9,15 @@
   overflow-x: hidden;
   padding-top: 16px;
   box-shadow: rgba(112, 144, 176, 0.18) 14px 17px 40px 4px;
+  .img-logo{
+    margin-left: 4.5rem;
+  }
+  .text-logo{
+    margin-left: 1rem;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fff;
+  }
   .svg-logo{
     color: #000;
   }
@@ -40,7 +29,7 @@
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #000;
+  color: #fff;
   display: block;
 }
 

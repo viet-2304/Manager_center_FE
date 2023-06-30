@@ -10,6 +10,7 @@ import { CourseSessionComponent } from './components/course-session/course-sessi
 import { CategorySessionComponent } from './components/category-session/category-session.component';
 import { CourseItemsModule } from '../shared/course-items/course-item.module';
 import { CarouselModule } from 'primeng/carousel';
+import { MyCourseComponent } from './components/my-course/my-course.component';
 @NgModule({
   imports: [HomeRouting, CommonModule, CourseItemsModule, CarouselModule],
   exports: [],
@@ -19,6 +20,7 @@ import { CarouselModule } from 'primeng/carousel';
     TeacherSessionComponent,
     CourseSessionComponent,
     CategorySessionComponent,
+    MyCourseComponent,
   ],
   providers: [],
 })

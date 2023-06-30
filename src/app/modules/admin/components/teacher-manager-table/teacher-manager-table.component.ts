@@ -1,11 +1,16 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { DialogService } from 'primeng/dynamicdialog';
 import { TeacherResponse } from 'src/app/home/models/teacher.model';
+import { RegisterTeacherFormComponent } from 'src/app/shared/register-teacher-form/register-teacher-form.component';
 import { AdminService } from '../../service/admin.service';
 
 @Component({
   selector: 'app-teacher-manager-table',
   templateUrl: './teacher-manager-table.component.html',
   styleUrls: ['./teacher-manager-table.component.scss'],
+  providers: [DialogService, MessageService]
+
 })
 export class TeacherManagerTableComponent {
   public teachers: TeacherResponse[];
@@ -14,7 +19,9 @@ export class TeacherManagerTableComponent {
   public currentEmail: string;
   constructor(
     private adminService: AdminService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private dialogService: DialogService
+
     ) {}
 
   ngOnInit(): void {
@@ -48,5 +55,20 @@ export class TeacherManagerTableComponent {
         },
       });
     this.visible = false;
+  }
+
+  public createTeacher() : void {
+    this.dialogService.open(RegisterTeacherFormComponent, {
+      // data: {
+      //   courseId: courseId
+      // },
+      header: "Tạo giáo viên ",
+      width: '90%',
+      height: '100%',
+      contentStyle: { overflow: 'auto' },
+      baseZIndex: 10000,
+      maximizable: true,
+
+    })
   }
 }

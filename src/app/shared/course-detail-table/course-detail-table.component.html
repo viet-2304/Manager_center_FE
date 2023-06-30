@@ -1,0 +1,34 @@
+<p-table
+  [value]="courseDetail"
+  [tableStyle]="{
+    'font-size': '16px'
+  }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Ngày học</th>
+      <th>Thời gian</th>
+      <th>Phòng</th>
+      <th>Danh sách điểm danh</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-course let-expanded="expanded">
+    <tr>
+      <td>{{ course.learningDate }} - {{ course.learnDate | date: 'dd/MM/yyyy' }}</td>
+      <td>
+        {{ course.learningSession.fromTime }} -
+        {{ course.learningSession.toTime }}
+      </td>
+      <td>
+        Tầng {{ course.roomDto.floorId }} phòng {{ course.roomDto.roomName }}
+      </td>
+      <td>
+        <p-button
+          (click)="showListStudentAttendance(course.courseDetailId)"
+          icon="fa-regular fa-eye"
+        >
+        </p-button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

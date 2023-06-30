@@ -62,10 +62,9 @@
       <td>
         <button
           class="btn btn-lg"
-          [ngClass]="!student.active ? 'btn-success' : 'btn-danger'"
+          [ngClass]="!student.active ? 'btn-success fa-solid fa-arrow-rotate-right ' : 'btn-danger fa-solid fa-user-slash'"
           (click)="changeActive(!student.active, student.email)"
         >
-        {{student.active ? 'Xóa học sinh': 'Khôi phục tài khoản'}}
 
         </button>
       </td>

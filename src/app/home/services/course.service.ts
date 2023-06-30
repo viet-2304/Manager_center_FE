@@ -47,6 +47,20 @@ export class CourseService {
   }
 
   public getCourseById(courseId: string): Observable<CourseResponse> {
-    return this.httpClient.get<CourseResponse> (`${this.apiHost}/courses?courseId=${courseId}`)
+    return this.httpClient.get<CourseResponse>(
+      `${this.apiHost}/courses?courseId=${courseId}`
+    );
+  }
+
+  public getCourseByTeacherId(teacherId: string): Observable<CourseResponse[]> {
+    return this.httpClient.get<CourseResponse[]>(
+      `${this.apiHost}/courses/getByTeacher?teacherId=${teacherId}`
+    );
+  }
+
+  public getCourseByStudentId(studentId: string): Observable<CourseResponse[]> {
+    return this.httpClient.get<CourseResponse[]>(
+      `${this.apiHost}/courses/getByStudent?studentId=${studentId}`
+    );
   }
 }

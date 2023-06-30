@@ -45,6 +45,8 @@ export class LoginComponent {
 
     this.loginService.login(email, password).subscribe({
       next: (res) => {
+        console.log('res: ', res);
+
         window.localStorage.setItem('authToken', res.token);
         window.localStorage.setItem('email', res.userDto.email);
         window.localStorage.setItem('role', res.userDto.roleId);
@@ -52,9 +54,13 @@ export class LoginComponent {
 
         if (res.userDto.roleId === 'admin') {
           window.location.href = '/admin';
-        } else {
+        } else if(res.userDto.roleId === 'student') {
           console.log(this.store.selectSnapshot(UserState.getCurrentUser));
           window.location.href = '/home';
+        }
+        else {
+          window.location.href = '/teacher';
+
         }
       },
       error: () => {

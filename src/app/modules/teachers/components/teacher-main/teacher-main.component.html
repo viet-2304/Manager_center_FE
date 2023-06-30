@@ -1,1 +1,24 @@
-<p>teacher-main works!</p>
+<div class="main-page bg-light" style="width: 84vw">
+  <div class="content mt-5">
+    <div [ngSwitch]="sidebarSelected">
+      <div *ngSwitchCase="'teacher'"></div>
+      <!-- <div *ngSwitchCase="'course'"> -->
+      <!-- <app-course-manager-table
+        [auth]="'teacher'"
+          [teacherId]="teacherId"
+        ></app-course-manager-table> -->
+
+      <!-- </div> -->
+      <div *ngSwitchCase="'salary'">
+        <app-salary></app-salary>
+      </div>
+
+      <div *ngSwitchDefault>
+        <app-course-table
+          [auth]="'teacher'"
+          [teacherId]="teacherId"
+        ></app-course-table>
+      </div>
+    </div>
+  </div>
+</div>

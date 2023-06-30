@@ -13,13 +13,15 @@ import { StudentManagerTableComponent } from './components/student-manager-table
 import { ManagerRoomComponent } from './components/manager-room/manager-room.component';
 import { DialogModule } from 'primeng/dialog';
 import { TeacherManagerTableComponent } from './components/teacher-manager-table/teacher-manager-table.component';
-import { CourseManagerTableComponent } from './components/course-manager-table/course-manager-table.component';
 import { CourseDetailTableComponent } from './components/course-detail-table/course-detail-table.component';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { ToastModule } from 'primeng/toast';
 import { ListStudentInCourseModule } from 'src/app/shared/list-student-in-course/list-student-in-course.module';
 import { PipeModule } from 'src/app/shared/pipes/pipe.module';
 import { AttendanceModule } from 'src/app/shared/attendace-student/attendace-student.module';
+import { CourseDetailTableModule } from 'src/app/shared/course-detail-table/course-detail.module';
+import { CourseTableModule } from 'src/app/shared/course-table/course-table.module';
+import { TeacherRegisterForm } from 'src/app/shared/register-teacher-form/register-teacher-form.module';
 @NgModule({
   declarations: [
     AdminPageComponent,
@@ -29,10 +31,11 @@ import { AttendanceModule } from 'src/app/shared/attendace-student/attendace-stu
     StudentManagerTableComponent,
     ManagerRoomComponent,
     TeacherManagerTableComponent,
-    CourseManagerTableComponent,
     CourseDetailTableComponent
   ],
   imports: [
+    CourseDetailTableModule,
+    CourseTableModule,
     CommonModule,
     AdminRouting,
     SidebarModule,
@@ -44,12 +47,15 @@ import { AttendanceModule } from 'src/app/shared/attendace-student/attendace-stu
     ToastModule,
     ListStudentInCourseModule,
     PipeModule,
+    TeacherRegisterForm,
     AttendanceModule
   ],
   exports: [
     SidebarComponent,
     AdminHeaderComponent,
     MainComponent,
+    CourseDetailTableComponent,
+    // CourseManagerTableComponent
   ]
 })
 export class AdminModule {}

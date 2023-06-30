@@ -8,16 +8,6 @@
   scrollHeight="530px"
   dataKey="courseId"
 >
-  <ng-template pTemplate="caption">
-    <div class="flex">
-      <button
-        pButton
-        label="Tạo khóa học"
-        class="p-button-outlined"
-        icon="pi pi-filter-slash"
-      ></button>
-    </div>
-  </ng-template>
   <ng-template pTemplate="header">
     <tr>
       <th></th>
@@ -28,7 +18,7 @@
       <th>Số lượng hiện tại</th>
       <th>Giá</th>
       <th>Giáo viên</th>
-      <th>Danh sách học sinh</th>
+      <th>Tổng doanh thu</th>
     </tr>
     <tr>
       <th></th>
@@ -72,18 +62,17 @@
         ></button>
       </td>
       <td>{{ course.courseName }}</td>
-      <td>{{ course.frommDate | date : "dd/MM/yyyy" }}</td>
-      <td>{{ course.toDate | date : "dd/MM/yyyy" }}</td>
+      <td>{{ course.frommDate | date: 'dd/MM/yyyy'  }}</td>
+      <td>{{ course.toDate | date: 'dd/MM/yyyy'  }}</td>
       <td>{{ course.maxQuantity }}</td>
       <td>{{ course.currentQuantity }}</td>
-      <td>{{ course.price }}</td>
+      <td>{{ course.price | currency: 'VND' }}</td>
       <td>{{ course.teacherDto.fullName }}</td>
-      <td>
-        <p-button
-          (click)="showListStudent(course.courseId)"
-          icon="fa-regular fa-eye"
-        >
-        </p-button>
+      <td >
+        <div >
+          <input pInputText  type="hidden" disabled  pTooltip="lương = tổng thu * 40%">
+          {{course.price * course.currentQuantity | currency:'VND'}}
+        </div>
       </td>
     </tr>
   </ng-template>

@@ -6,8 +6,18 @@
     border: '1px soild black'
   }"
   scrollHeight="530px"
-
 >
+  <ng-template pTemplate="caption">
+    <div class="flex">
+      <button
+        pButton
+        label="Tạo giáo viên"
+        class="p-button-outlined"
+        icon="pi pi-filter-slash"
+        (click)="createTeacher()"
+      ></button>
+    </div>
+  </ng-template>
   <ng-template pTemplate="header">
     <tr>
       <th></th>
@@ -51,10 +61,10 @@
       <td>
         <button
           class="btn btn-lg"
-          [ngClass]="!teacher.active ? 'btn-success' : 'btn-danger'"
+          [ngClass]="!teacher.active ? 'btn-success fa-solid fa-arrow-rotate-right ' : 'btn-danger fa-solid fa-user-slash'"
           (click)="changeActive(!teacher.active, teacher.email)"
         >
-          {{ teacher.active ? "Xóa giáo viên" : "Khôi phục tài khoản" }}
+          <!-- {{ teacher.active ? `<i class="fa-solid fa-user-slash"></i>`: "Khôi phục tài khoản" }} -->
         </button>
       </td>
       <td>{{ teacher.fullName }}</td>
@@ -63,7 +73,7 @@
       <td>{{ teacher.email }}</td>
       <td>{{ teacher.phoneNumber }}</td>
       <td>{{ teacher.address }}</td>
-      <td>{{ teacher.dateOfBirth | date: 'dd/MM/yyyy'  }}</td>
+      <td>{{ teacher.dateOfBirth | date : "dd/MM/yyyy" }}</td>
       <td>
         <button
           class="btn"

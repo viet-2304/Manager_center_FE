@@ -17,7 +17,7 @@
             </div>
             <div class="col-xl-6">
               <div class="card-body p-md-5 text-black">
-                <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                <h3 class="mb-5 text-uppercase">Đăng ký</h3>
                 <form
                   action=""
                   [formGroup]="registerForm"
@@ -41,7 +41,7 @@
                     </div>
                   </div>
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="form3Example97">Password</label>
+                    <label class="form-label" for="form3Example97">Mật khẩu</label>
                     <input
                       type="text"
                       id="form3Example97"
@@ -61,7 +61,7 @@
                     <div class="col-md-12 mb-4">
                       <div class="form-outline">
                         <label class="form-label" for="form3Example1m"
-                          >Full name</label
+                          >Họ và tên</label
                         >
                         <input
                           type="text"
@@ -82,10 +82,10 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-12 mb-4">
                       <div class="form-outline">
                         <label class="form-label" for="form3Example1m1"
-                          >Mother's name</label
+                          >Họ và tên phụ huynh</label
                         >
                         <input
                           type="text"
@@ -95,7 +95,7 @@
                         />
                       </div>
                     </div>
-                    <div class="col-md-6 mb-4">
+                    <!-- <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <label class="form-label" for="form3Example1n1"
                           >Father's name</label
@@ -107,7 +107,7 @@
                           formControlName="fatherName"
                         />
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="row">
                     <div class="col-md-12 mb-4">
@@ -127,7 +127,7 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example8"
-                      >Address</label
+                      >Địa chỉ</label
                     >
                     <input
                       type="text"
@@ -149,7 +149,7 @@
 
                   <div class="form-outline mb-4">
                     <label class="form-label" for="form3Example8"
-                      >Phone Number</label
+                      >Số điện thoại</label
                     >
                     <input
                       type="text"
@@ -173,7 +173,7 @@
                   <div
                     class="d-md-flex justify-content-start align-items-center mb-4 py-2"
                   >
-                    <h6 class="mb-0 me-4">Gender:</h6>
+                    <h6 class="mb-0 me-4">Giới tính:</h6>
 
                     <div class="form-check form-check-inline mb-0 me-4">
                       <input
@@ -185,7 +185,7 @@
                         formControlName="generate"
                       />
                       <label class="form-check-label" for="femaleGender"
-                        >Female</label
+                        >Nữ</label
                       >
                     </div>
 
@@ -199,21 +199,21 @@
                         formControlName="generate"
                       />
                       <label class="form-check-label" for="maleGender"
-                        >Male</label
+                        >Nam</label
                       >
                     </div>
                   </div>
                 </form>
                 <div class="d-flex justify-content-end pt-3">
                   <button type="button" class="btn btn-light btn-lg">
-                    Reset all
+                    Xóa hết
                   </button>
                   <button
                     type="button"
                     class="btn btn-warning btn-lg ms-2"
                     (click)="register()"
                   >
-                    Submit form
+                    Nộp
                   </button>
                 </div>
               </div>
