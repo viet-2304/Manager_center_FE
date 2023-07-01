@@ -16,7 +16,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { httpInterceptorProviders } from './core/interceptor';
 import { NgxsModule } from '@ngxs/store';
 import { CreateCourseModalComponent } from './shared/create-course-modal/create-course-modal.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +28,16 @@ import { CreateCourseModalComponent } from './shared/create-course-modal/create-
     CreateCourseModalComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     NgxsModule.forRoot([], { developmentMode: false }),
-
+    DropdownModule,
+    ToastModule
   ],
   // exports: [HeaderComponent],
   providers: [httpInterceptorProviders],

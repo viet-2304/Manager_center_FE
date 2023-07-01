@@ -14,7 +14,7 @@
   </ng-template>
   <ng-template pTemplate="body" let-course let-expanded="expanded">
     <tr>
-      <td>{{ course.learningDate }} - {{ course.learnDate | date: 'dd/MM/yyyy' }}</td>
+      <td> {{ course.learnDate | date: 'dd/MM/yyyy' }}</td>
       <td>
         {{ course.learningSession.fromTime }} -
         {{ course.learningSession.toTime }}

@@ -16,3 +16,14 @@ export class TeacherResponse {
   public userId: string;
   public isActive: boolean;
 }
+
+export class TeacherRegister {
+  public email: string;
+  public password: string;
+  public fullName: string;
+  public phoneNumber: string;
+  public dateOfBirth: string;
+  public address: string;
+  public gender: string;
+  public subjectId: string;
+}

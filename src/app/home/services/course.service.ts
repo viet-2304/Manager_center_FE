@@ -6,6 +6,9 @@ import { CourseResponse, CourseStudentDto } from '../models/course.model';
 import { CourseDetailModel } from 'src/app/modules/courses/models/course.model';
 import { StudentModel } from './user.model';
 import { StudentAttendanceModel } from 'src/app/shared/models/student-attendance.model';
+import { CourseDetail, CourseRegister } from 'src/app/shared/models/shared.model';
+import { AttendanceModule } from 'src/app/shared/attendace-student/attendace-student.module';
+import { AttendanceRequestModel } from 'src/app/shared/models/attendance.model';
 
 @Injectable({ providedIn: 'root' })
 export class CourseService {
@@ -62,5 +65,13 @@ export class CourseService {
     return this.httpClient.get<CourseResponse[]>(
       `${this.apiHost}/courses/getByStudent?studentId=${studentId}`
     );
+  }
+
+  public createCourse(course: CourseRegister): Observable<any> {
+    return this.httpClient.post<any>(`${this.apiHost}/courses/createCourse`, course)
+  }
+
+  public createAttendance(listAttendance: AttendanceRequestModel[]): Observable<any> {
+    return this.httpClient.post<any>(`${this.apiHost}/attendance/createAttendance`, listAttendance)
   }
 }

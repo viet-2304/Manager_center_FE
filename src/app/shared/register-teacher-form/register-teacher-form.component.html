@@ -1,58 +1,169 @@
-<section class="vh-100" >
+<section class="vh-100">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
+        <div class="card text-black" style="border-radius: 25px">
           <div class="card-body p-md-5">
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-8 col-xl-7 order-2 order-lg-1">
-
-                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">Tạo tài khoản giáo viên</p>
-                <form class="mx-1 mx-md-4">
+                <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                  Tạo tài khoản giáo viên
+                </p>
+                <form
+                  class="mx-1 mx-md-4"
+                  [formGroup]="registerTeacherForm"
+                  (submit)="registerTeacher()"
+                >
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <i class="fas fa-envelope fa-lg mb-5 me-3 fa-fw"></i>
+
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" />
-                      <label class="form-label fs-5" for="form3Example1c">Họ và tên</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        formControlName="email"
+                      />
+                      <label class="form-label fs-4" for="form3Example1c"
+                        >Email</label
+                      >
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <i class="fas fa-key fa-lg mb-5 me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="form3Example3c" class="form-control" />
-                      <label class="form-label fs-5" for="form3Example3c">Email</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        formControlName="password"
+                      />
+                      <label class="form-label fs-4" for="form3Example3c"
+                        >Mật khẩu</label
+                      >
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <i class="fas fa-user fa-lg mb-5 me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4c" class="form-control" />
-                      <label class="form-label fs-5" for="form3Example4c">Mật khẩu</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="fullName"
+                      />
+                      <label class="form-label fs-4" for="form3Example3c"
+                        >Họ và tên</label
+                      >
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <i
+                      class="fa-solid fa-square-phone fa-lg mb-5 me-3 fa-fw"
+                    ></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" class="form-control" />
-                      <label class="form-label fs-5" for="form3Example4cd">Nhập lại mật khẩu</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="phoneNumber"
+                      />
+                      <label class="form-label fs-4" for="form3Example3c"
+                        >Số điện thoại</label
+                      >
                     </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i
+                      class="fa-solid fa-location-dot fa-lg mb-5 me-3 fa-fw"
+                    ></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="address"
+                      />
+                      <label class="form-label fs-4" for="form3Example3c"
+                        >Địa chỉ</label
+                      >
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-md-flex justify-content-start align-items-center mb-4 py-2"
+                  >
+                    <h6 class="mb-0 me-4">
+                      Giới tính:
+                      <i class="fa-solid fa-venus-mars mb-5 me-3 fa-fw"></i>
+                    </h6>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        value="Female"
+                        formControlName="gender"
+                      />
+                      <label class="form-check-label" for="femaleGender"
+                        >Nữ</label
+                      >
+                    </div>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        value="Male"
+                        formControlName="gender"
+                      />
+                      <label class="form-check-label" for="maleGender"
+                        >Nam</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa-solid fa-calendar fa-lg mb-5 me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input
+                        type="date"
+                        class="form-control"
+                        formControlName="dateOfBirth"
+                      />
+                      <label class="form-label fs-4" for="form3Example4cd"
+                        >Ngày sinh</label
+                      >
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa-brands fa-leanpub fa-lg mb-5 me-3 fa-fw"></i>
+                    <p-dropdown
+                      [options]="subjectData"
+                      [(ngModel)]="selectedSubject"
+                      optionLabel="subjectName"
+                      formControlName="subjectId"
+                    ></p-dropdown>
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg" (click)="registerTeacher()">Tạo tài khoản</button>
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-lg"
+                      (click)="registerTeacher()"
+                    >
+                      Tạo tài khoản
+                    </button>
                   </div>
-
                 </form>
-
               </div>
-              <div class="col-md-10 col-lg-4 col-xl-5 d-flex align-items-center order-1 order-lg-2">
-
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                  class="img-fluid" alt="Sample image">
-
+              <div
+                class="col-md-10 col-lg-4 col-xl-5 d-flex align-items-center order-1 order-lg-2"
+              >
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid"
+                  alt="Sample image"
+                />
               </div>
             </div>
           </div>

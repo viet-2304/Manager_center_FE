@@ -1,4 +1,5 @@
 export class StudentModel {
+  public studentId: string;
   public email: string;
   public phoneNumber: string;
   public address: string;
