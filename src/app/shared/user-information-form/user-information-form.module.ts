@@ -6,9 +6,14 @@ import { UserInformationFormComponent } from './user-information-form.component'
 import { UserInformationRouting } from './user-information.routing';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule,UserInformationRouting],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UserInformationRouting,
+  ],
   exports: [UserInformationFormComponent],
   declarations: [UserInformationFormComponent],
   providers: [],
 })
-export class UserInformation { }
+export class UserInformation {}

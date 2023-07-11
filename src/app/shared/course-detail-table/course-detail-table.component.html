@@ -6,10 +6,11 @@
 >
   <ng-template pTemplate="header">
     <tr>
-      <th>Ngày học</th>
-      <th>Thời gian</th>
-      <th>Phòng</th>
-      <th>Danh sách điểm danh</th>
+      <th pSortableColumn="learnDate">Ngày học    <p-sortIcon field="date"></p-sortIcon></th>
+      <th pSortableColumn="time">Thời gian    <p-sortIcon field="time"></p-sortIcon></th>
+      <th pSortableColumn="roomDto">Phòng    <p-sortIcon field="endDate"></p-sortIcon></th>
+      <th pSortableColumn="endDate">Danh sách điểm danh    <p-sortIcon field="endDate"></p-sortIcon></th>
+
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-course let-expanded="expanded">

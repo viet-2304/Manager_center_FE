@@ -9,14 +9,18 @@
   dataKey="courseId"
 >
   <ng-template pTemplate="caption">
-    <div class="flex">
-      <button
-        pButton
-        label="Tạo khóa học"
-        class="p-button-outlined"
-        icon="pi pi-filter-slash"
-        (click)="createCourse()"
-      ></button>
+    <div class="d-flex justify-content-between">
+      <div class="fs-2">Danh sách khóa học</div>
+
+      <div>
+        <button
+          pButton
+          label="Tạo khóa học"
+          class="p-button-outlined"
+          icon="pi pi-filter-slash"
+          (click)="createCourse()"
+        ></button>
+      </div>
     </div>
   </ng-template>
   <ng-template pTemplate="header">
@@ -25,11 +29,11 @@
       <th>Tên môn học</th>
       <th>Bắt đầu</th>
       <th>Kết thúc</th>
-      <th>Số lượng tối đa</th>
-      <th>Số lượng hiện tại</th>
+      <th>Số lượng HS tối đa</th>
+      <th>Số lượng HS hiện tại</th>
       <th>Giá</th>
       <th>Giáo viên</th>
-      <th>Danh sách học sinh</th>
+      <th style="width: 10em">Hoạt động</th>
     </tr>
     <tr>
       <th></th>
@@ -77,27 +81,23 @@
       <td>{{ course.toDate | date : "dd/MM/yyyy" }}</td>
       <td>{{ course.maxQuantity }}</td>
       <td>{{ course.currentQuantity }}</td>
-      <td>{{ course.price }}</td>
+      <td>{{ course.price | currency : "VND" }}</td>
       <td>{{ course.teacherDto.fullName }}</td>
       <td>
         <p-button
+          styleClass="p-2"
           (click)="showListStudent(course.courseId)"
           icon="fa-regular fa-eye"
         >
         </p-button>
         |
         <p-button
-          styleClass="p-button-success"
-
+          styleClass="p-button-success p-2"
           icon="fa-solid fa-pen-to-square"
         >
         </p-button
         >|
-        <p-button
-          styleClass="p-button-danger"
-
-          icon="fa-solid fa-trash-can"
-        >
+        <p-button styleClass="p-button-danger p-2" icon="fa-solid fa-trash-can">
         </p-button>
       </td>
     </tr>

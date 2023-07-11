@@ -8,7 +8,9 @@
   scrollHeight="530px"
 >
   <ng-template pTemplate="caption">
-    <div class="flex">
+    <div class="d-flex justify-content-between">
+      <div class="fs-2">Danh sách giáo viên</div>
+
       <button
         pButton
         label="Tạo giáo viên"
@@ -28,6 +30,7 @@
       <th>Số điện thoại</th>
       <th>Địa chỉ</th>
       <th>Ngày sinh</th>
+      <th>Chiết khấu</th>
       <th>Trạng thái</th>
     </tr>
     <tr>
@@ -54,6 +57,7 @@
         <p-sortIcon field="dateOfBirth"></p-sortIcon>
       </th>
       <th></th>
+      <th></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-teacher>
@@ -74,6 +78,7 @@
       <td>{{ teacher.phoneNumber }}</td>
       <td>{{ teacher.address }}</td>
       <td>{{ teacher.dateOfBirth | date : "dd/MM/yyyy" }}</td>
+      <td> {{teacher.salaryPercent *10 | percent }} </td>
       <td>
         <button
           class="btn"

@@ -15,6 +15,8 @@ export class TeacherResponse {
   public subjectName: string;
   public userId: string;
   public isActive: boolean;
+  public imageUrl: string;
+  public salaryPercent: number;
 }
 
 export class TeacherRegister {
@@ -26,4 +28,5 @@ export class TeacherRegister {
   public address: string;
   public gender: string;
   public subjectId: string;
+  public salaryPercent: number;
 }

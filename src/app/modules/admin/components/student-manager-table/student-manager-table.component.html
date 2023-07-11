@@ -7,6 +7,9 @@
   }"
   scrollHeight="530px"
 >
+  <ng-template pTemplate="caption">
+      <div class="fs-2">Danh sách học sinh</div>
+  </ng-template>
   <ng-template pTemplate="header">
     <tr>
       <th></th>
@@ -62,11 +65,13 @@
       <td>
         <button
           class="btn btn-lg"
-          [ngClass]="!student.active ? 'btn-success fa-solid fa-arrow-rotate-right ' : 'btn-danger fa-solid fa-user-slash'"
+          [ngClass]="
+            !student.active
+              ? 'btn-success fa-solid fa-arrow-rotate-right '
+              : 'btn-danger fa-solid fa-user-slash'
+          "
           (click)="changeActive(!student.active, student.email)"
-        >
-
-        </button>
+        ></button>
       </td>
       <td>{{ student.fullName }}</td>
       <td>{{ student.gender | genTransfer }}</td>
@@ -77,7 +82,7 @@
       <td>{{ student.motherPhoneNumber }}</td>
       <td>{{ student.fatherName }}</td>
       <td>{{ student.fatherPhoneNumber }}</td>
-      <td>{{ student.dateOfBirth | date: 'dd/MM/yyyy'  }}</td>
+      <td>{{ student.dateOfBirth | date : "dd/MM/yyyy" }}</td>
       <td>
         <button
           class="btn"

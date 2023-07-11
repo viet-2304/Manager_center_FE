@@ -20,7 +20,9 @@ export class TeacherSessionComponent {
   }
   private getTeacher(): void {
     this.adminService.getAllTeacher().subscribe((res) => {
-      this.teacher = res.splice(0, 5);
+      console.log("teacher: ", res);
+
+      this.teacher = res?.splice(0, 5);
       this.cdr.detectChanges();
     });
   }

@@ -55,7 +55,7 @@
               <div class="mb-5">
                 <h4 class="lead fw-normal mb-1">Thông tin cá nhân</h4>
                 <div class="p-4" style="background-color: #f8f9fa">
-                  <form class="needs-validation" novalidate="">
+                  <form class="needs-validation" [formGroup]="userInForForm">
                     <div class="row g-3">
                       <div class="col-12">
                         <label for="username" class="form-label"
@@ -67,7 +67,8 @@
                             class="form-control"
                             id="username"
                             placeholder="Username"
-                            required=""
+                            [value]="student.fullName"
+                            [disabled]="isDisable"
                           />
                         </div>
                       </div>
@@ -80,16 +81,20 @@
                           type="date"
                           class="form-control"
                           id="birthday"
-                          placeholder=""
-                          value=""
-                          required=""
+                          [value]="student.dateOfBirth"
+                          [disabled]="isDisable"
                         />
                       </div>
                       <div class="col-sm-3">
                         <label for="state" class="form-label">Giới tính</label>
-                        <select class="form-select" id="state" required="">
-                          <option value="">Nam</option>
-                          <option value="">Nữ</option>
+                        <select
+                          class="form-select"
+                          id="state"
+                          required=""
+                          [disabled]="isDisable"
+                        >
+                          <option value="1">Nam</option>
+                          <option value="0">Nữ</option>
                         </select>
                       </div>
 
@@ -102,8 +107,8 @@
                           class="form-control"
                           id="name-parent"
                           placeholder=""
-                          value=""
-                          required=""
+                          [value]="student.fatherName"
+                          [disabled]="isDisable"
                         />
                       </div>
                       <div class="col-sm-6">
@@ -115,8 +120,8 @@
                           class="form-control"
                           id="name-parent"
                           placeholder=""
-                          value=""
-                          required=""
+                          [value]="student.fatherPhoneNumber"
+                          [disabled]="isDisable"
                         />
                       </div>
 
@@ -127,6 +132,7 @@
                           class="form-control"
                           id="email"
                           placeholder="you@example.com"
+                          [value]="student.email"
                           disabled
                         />
                       </div>
@@ -138,7 +144,8 @@
                           class="form-control"
                           id="address"
                           placeholder="1234 Main St"
-                          required=""
+                          [value]="student.address"
+                          [disabled]="isDisable"
                         />
                       </div>
 
@@ -152,16 +159,32 @@
                           id="phone-number"
                           placeholder="0920290029"
                           required=""
-                          value=""
+                          [value]="student.phoneNumber"
+                          [disabled]="isDisable"
                         />
                       </div>
                     </div>
 
                     <hr class="my-4" />
 
-                    <button class="w-100 btn btn-success btn-lg" type="submit">
-                      Chỉnh sửa thông tin
-                    </button>
+                    <div *ngIf="isDisable; else elseBlock">
+                      <button
+                        class="w-100 btn btn-success btn-lg"
+                        type="button"
+                        (click)="editUserInfo()"
+                      >
+                        Chỉnh sửa thông tin
+                      </button>
+                    </div>
+                    <ng-template #elseBlock>
+                      <button
+                        class="w-100 btn btn-success btn-lg"
+                        type="button"
+                        (click)="submit()"
+                      >
+                        Hoàn tất chỉnh sửa
+                      </button>
+                    </ng-template>
                   </form>
                 </div>
               </div>

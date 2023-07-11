@@ -33,7 +33,7 @@ export class CourseDetailTableComponent {
       data: {
         courseId: courseId
       },
-      header: "Danh sách học sinh",
+      header: "Danh sách học sinh điểm danh",
       width: '50%',
       contentStyle: { overflow: 'auto' },
       baseZIndex: 10000,

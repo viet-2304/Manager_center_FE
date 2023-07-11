@@ -49,6 +49,7 @@ export class HeaderComponent {
         this.studentService.getCurrentStudent(this.currentEmail).subscribe({
           next: (res) => {
             if (res) {
+              window.localStorage.setItem("studentId", res.studentId);
               this.studentEmail = res.email;
               // this.studentId = res.
               this.isLogin = true;

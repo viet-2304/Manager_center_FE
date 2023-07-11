@@ -5,6 +5,8 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import { CourseService } from 'src/app/home/services/course.service';
 import { StudentModule } from 'src/app/modules/students/student.module';
 import { AttendanceModule } from '../attendace-student/attendace-student.module';
@@ -16,6 +18,7 @@ import { StudentModel } from '../models/student.model';
   selector: 'app-edit-attendance-table',
   templateUrl: './edit-attendance-table.component.html',
   styleUrls: ['./edit-attendance-table.component.scss'],
+  providers: [MessageService],
 })
 export class EditAttendanceTableComponent {
   public listStudentAttendance: StudentModel[];
@@ -26,7 +29,9 @@ export class EditAttendanceTableComponent {
   public valueDescription: string;
   constructor(
     private cdr: ChangeDetectorRef,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private messageService: MessageService,
+    private ref: DynamicDialogRef
   ) {}
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -61,11 +66,21 @@ export class EditAttendanceTableComponent {
         description: '',
       });
     });
-    this.courseService
-      .createAttendance(this.listAttendanceRequest)
-      .subscribe((res) => {
+    this.courseService.createAttendance(this.listAttendanceRequest).subscribe({
+      next: (res) => {
         console.log('success: ', res);
-      });
+        this.ref.close();
+      },
+      error: (err) => {
+        console.log('error: ', err);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Thành công',
+          detail: 'Bạn đã hoàn thành quá trình điểm danh',
+        });
+        this.ref.close();
+      },
+    });
     console.log('attendance: ', this.listAttendanceRequest);
   }
 

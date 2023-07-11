@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -21,6 +21,7 @@ import {
   TemptToShow,
 } from '../models/shared.model';
 import { SharedService } from '../services/shared.service';
+import { SubjectService } from '../services/subject.service';
 
 @Component({
   selector: 'app-create-course-modal',
@@ -32,7 +33,7 @@ export class CreateCourseModalComponent {
   public listTeacher: TeacherResponse[];
   public roomResponse: TemptToShow[] = [];
   public learningSession: TemptToShow[] = [];
-  public teacherSelected: string;
+  public teacherSelected: any;
   public learningSessionSelected1: string;
   public learningSessionSelected2: string;
   public roomSelected1: string;
@@ -41,13 +42,16 @@ export class CreateCourseModalComponent {
   public subject: string;
   public courseDetail: CourseDetail[];
   public courseRegister: CourseRegister = new CourseRegister();
-
+  public listSubject: any[];
+  public subjectSelected: any;
+  @Input() courseSelected: any;
   constructor(
     private adminService: AdminService,
     private cdr: ChangeDetectorRef,
     private sharedService: SharedService,
     private courseService: CourseService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private subjectService: SubjectService
   ) {}
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -56,6 +60,7 @@ export class CreateCourseModalComponent {
     this.getAllLearningSession();
     this.getAllRoom();
     this.getAllTeacher();
+    this.getAllSubject();
     console.log('all room: ', this.roomResponse);
   }
 
@@ -80,7 +85,7 @@ export class CreateCourseModalComponent {
       this.messageService.add({
         severity: 'success',
         summary: 'Taọ thành công',
-        detail: 'Tài khoản giáo viên đã được được tạo',
+        detail: 'Khóa học mới đã được tạo thành công',
       });
     });
   }
@@ -146,5 +151,9 @@ export class CreateCourseModalComponent {
       });
       this.cdr.detectChanges();
     });
+  }
+
+  private getAllSubject(): void {
+    this.subjectService.getAllSubject().subscribe(res => {this.listSubject = res})
   }
 }

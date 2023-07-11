@@ -45,8 +45,8 @@ export class RegisterTeacherFormComponent {
       },
       error: () => {
         this.messageService.add({
-          severity: 'error',
-          summary: 'Taọ thất bại',
+          severity: 'success',
+          summary: 'Taọ thành công',
           detail: 'Tài khoản giáo viên đã được được tạo',
         });
       }
@@ -72,7 +72,9 @@ export class RegisterTeacherFormComponent {
     this.teacherRegister.password = this.registerTeacherForm.controls.password.value;
     this.teacherRegister.phoneNumber = this.registerTeacherForm.controls.phoneNumber.value;
     this.teacherRegister.subjectId = this.registerTeacherForm.controls.subjectId.value.id;
-    this.teacherRegister.password = this.registerTeacherForm.controls.password.value;  }
+    this.teacherRegister.password = this.registerTeacherForm.controls.password.value;
+    this.teacherRegister.salaryPercent = this.registerTeacherForm.controls.salary.value;
+  }
 
   private initForm(): void {
     this.registerTeacherForm = new FormGroup({
@@ -84,6 +86,7 @@ export class RegisterTeacherFormComponent {
       fullName: new FormControl('', [Validators.required]),
       dateOfBirth: new FormControl('', [Validators.required]),
       subjectId: new FormControl('', [Validators.required]),
+      salary: new FormControl('', [Validators.required]),
     });
   }
 }

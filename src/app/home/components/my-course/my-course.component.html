@@ -1,4 +1,10 @@
 <div style="margin-top: 7rem;">
-<p>my-course works!</p>
+  <div class="d-flex justify-content-around">
 
+    <div *ngFor="let course of courses" class="col-3 border">
+      <li>
+        <app-course-items [studentId]="studentId" [course]="course"></app-course-items>
+      </li>
+    </div>
+  </div>
 </div>

@@ -15,7 +15,7 @@ import { CourseDetailModel } from '../../models/course.model';
 })
 export class CourseDetailComponent {
   public courseDetail: CourseResponse;
-
+  public studentId: string;
   constructor(
     private courseService: CourseService,
     private route: ActivatedRoute,
@@ -33,6 +33,9 @@ export class CourseDetailComponent {
     let courseId: string = '';
     this.route.queryParams.subscribe((param: Params) => {
       courseId = param['id'];
+      this.studentId = param['student'];
+      console.log("studentId: ", this.studentId);
+
     });
     this.courseService.getCourseById(courseId).subscribe((res) => {
       this.courseDetail = res;

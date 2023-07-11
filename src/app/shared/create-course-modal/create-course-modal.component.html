@@ -46,7 +46,8 @@
           </div>
           <div class="col-sm-6 mb-3">
             <label for="slmax" class="form-label">Môn học</label>
-            <input type="text" class="form-control" id="slmax" />
+
+            <input disabled type="text" class="form-control" id="slmax" [value]="teacherSelected.subjectName"/>
           </div>
           <div class="col-sm-6 mb-3">
             <label for="price" class="form-label">Giá tiền khóa học</label>

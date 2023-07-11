@@ -19,6 +19,7 @@ export class CourseItemsComponent {
     private router: Router
   ) {}
   @Input() course: CourseResponse;
+  @Input() studentId: string;
   private data: CourseStudentDto = new CourseStudentDto();
 
   ngOnInit(): void {
@@ -27,7 +28,14 @@ export class CourseItemsComponent {
     console.log('course: ', this.course);
   }
   public openCourseDetail(id: string): void {
-    this.router.navigate(['/course/detail'], { queryParams: { id: id } });
+    if(this.studentId){
+
+      this.router.navigate(['/course/detail'], { queryParams: { id: id, student: this.studentId } });
+    }
+    else {
+
+      this.router.navigate(['/course/detail'], { queryParams: { id: id } });
+    }
   }
 
   public register(): void {

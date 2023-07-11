@@ -13,6 +13,7 @@ import { ListStudentInCourseComponent } from '../list-student-in-course/list-stu
 })
 export class CourseTableComponent {
   public course: CourseResponse[];
+  public role = window.localStorage.getItem("role") ?? "";
   @Input() auth: string = 'admin';
   @Input() teacherId: string;
   constructor(

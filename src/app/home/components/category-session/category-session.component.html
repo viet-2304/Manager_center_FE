@@ -5,7 +5,7 @@
     <h2 class="h2 section-title">Môn học phổ biến</h2>
 
     <ul class="grid-list">
-      <li>
+      <li *ngFor="let subject of listSubject">
         <div class="category-card">
           <div class="card-icon">
             <i class="fa-solid fa-calculator"></i>
@@ -13,14 +13,14 @@
 
           <div>
             <h3 class="h3 card-title">
-              <a href="#">Toán</a>
+              <a href="#">{{subject.subjectName}}</a>
             </h3>
 
-            <span class="card-meta">30 khóa học</span>
+            <!-- <span class="card-meta">30 khóa học</span> -->
           </div>
         </div>
       </li>
-
+<!--
       <li>
         <div class="category-card">
           <div class="card-icon"><i class="fa-solid fa-book"></i></div>
@@ -115,39 +115,9 @@
             <span class="card-meta">39 khóa học</span>
           </div>
         </div>
-      </li>
-
-      <!-- <li>
-        <div class="category-card">
-          <div class="card-icon">
-            <i class="fa-solid fa-sitemap"></i>
-          </div>
-
-          <div>
-            <h3 class="h3 card-title">
-              <a href="#"></a>
-            </h3>
-
-            <span class="card-meta">39 Course</span>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="category-card">
-          <div class="card-icon">
-            <i class="fa-solid fa-earth-americas"></i>
-          </div>
-
-          <div>
-            <h3 class="h3 card-title">
-              <a href="#">Geology</a>
-            </h3>
-
-            <span class="card-meta">39 Course</span>
-          </div>
-        </div>
       </li> -->
+
+
     </ul>
   </div>
 </section>
